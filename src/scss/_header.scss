@@ -1,2 +1,53 @@
 .header {
+    @include clear-after;
+
+    ul.menu {
+        @include list-reset;
+
+        margin: 1em 0;
+
+        .menu-item {
+            float: left;
+            margin: 0 1em 0 0;
+            font-size: 1.2em;
+
+            &.lang-item {
+                margin-right: 0;
+
+                &:after {
+                    content: "/";
+                    margin: 0 0.1em;
+                }
+
+                &:last-child {
+                    &:after {
+                        content: "";
+                    }
+                }
+            }
+
+            a {
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            &.current-lang, &.current-menu-item {
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    @include medium-screen {
+        margin: 2em 3em 2em;
+
+        .menu {
+            float: right;
+            font-size: 1.3em;
+        }
+    }
 }

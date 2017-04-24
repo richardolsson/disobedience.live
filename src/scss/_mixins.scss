@@ -1,4 +1,4 @@
-@mixin clear-fix {
+@mixin clear-after {
     &:after {
         content: "";
         display: block;
