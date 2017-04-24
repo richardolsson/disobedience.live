@@ -3,7 +3,7 @@
     <head>
         <title><?php the_title();?></title>
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/main.css">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,700|Taviraj:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
         <link rel="icon" href="<?php echo get_template_directory_uri();?>/images/favicon.png">
         <meta name="viewport" content="width=device-width">
     </head>
