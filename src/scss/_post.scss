@@ -2,4 +2,18 @@
     .kicker {
         font-size: 1.8em;
     }
+
+    .post-content {
+        a {
+            color: white;
+
+            &:hover {
+                color: $c-grad04;
+            }
+        }
+
+        ul {
+            font-size: 1.5em;
+        }
+    }
 }
