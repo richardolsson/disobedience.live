@@ -1,6 +1,11 @@
 .header {
     @include clear-after;
 
+    .logo {
+        max-width: 240px;
+        height: auto;
+    }
+
     ul.menu {
         @include list-reset;
 
@@ -45,9 +50,14 @@
     @include medium-screen {
         margin: 2em 3em 2em;
 
-        .menu {
+        div.menu {
+            margin: 0.5em 0 1em;
             float: right;
             font-size: 1.3em;
+
+            ul.menu {
+                margin: 0;
+            }
         }
     }
 }
