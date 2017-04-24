@@ -2,4 +2,86 @@
     width: 96%;
     margin: 0 auto;
     max-width: 60em;
+
+}
+
+.wpcf7 {
+    font-size: 1.3em;
+
+    .wpcf7-response-output, .screen-reader-response {
+        &:before {
+            content: "!!! ";
+            font-weight: 400;
+            color: white;
+        }
+    }
+
+    .field {
+        @include clear-after;
+
+        position: relative;
+        display: block;
+        margin: 2em 0;
+
+        &.text {
+            border-bottom: 2px solid white;
+        }
+
+        &.textarea {
+            border: 2px solid white;
+        }
+
+        &.checkboxes {
+            .wpcf7-list-item {
+                display: block;
+                margin: 1em 0;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 0;
+            left: 0.3em;
+            display: block;
+            font-size: 0.9em;
+        }
+
+        input[type=text], input[type=email], textarea {
+            width: 100%;
+            display: block;
+            border-width: 0;
+            background-color: transparent;
+            font-size: 1.4em;
+            outline: none;
+            color: white;
+        }
+
+        input[type=text], input[type=email] {
+            float: right;
+            width: 75%;
+        }
+
+        textarea {
+            padding: 1em 0.2em;
+            box-sizing: border-box;
+        }
+
+        .wpcf7-not-valid-tip {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    input[type=submit] {
+        @include cta-button;
+    }
+
+    @include medium-screen {
+        .field {
+            input[type=text], input[type=email] {
+                width: 85%;
+            }
+        }
+    }
 }
