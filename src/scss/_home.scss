@@ -40,6 +40,10 @@
     }
 
     @include medium-screen {
+        .header {
+            margin: 2em;
+        }
+
         .teaser {
             height: 40em;
             font-size: 1em;
