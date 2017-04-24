@@ -1,0 +1,26 @@
+.home {
+    &:before, &:after {
+        background: none;
+        animation: none;
+    }
+
+    .page {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .teaser {
+        position: relative;
+        height: 30em;
+        text-align: center;
+        color: white;
+        padding: 3em;
+
+        @include animated-gradient-background(absolute);
+
+        .teaser-text {
+            position: relative;
+            z-index: 3;
+        }
+    }
+}
