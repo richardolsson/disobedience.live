@@ -9,18 +9,86 @@
         margin: 0 auto;
     }
 
+    .content {
+        max-width: none;
+    }
+
     .teaser {
         position: relative;
-        height: 30em;
         text-align: center;
-        color: white;
-        padding: 3em;
+        color: black;
 
         @include animated-gradient-background(absolute);
 
-        .teaser-text {
+        .teaser-content {
             position: relative;
+            padding: 2em 1em 2em;
             z-index: 3;
         }
+
+        .teaser-countdown {
+            font-size: 20px;
+        }
+
+        .teaser-cta {
+            margin-top: 2em;
+
+            a {
+                @include cta-button;
+            }
+        }
     }
+
+    @include medium-screen {
+        .teaser {
+            height: 40em;
+            font-size: 1em;
+
+            .teaser-content {
+                padding: 10em 10em 2em;
+            }
+
+            .teaser-countdown {
+                display: flex;
+                justify-content: center;
+
+                &:before {
+                    content: " ";
+                    background: url(images/logo.png) no-repeat top left;
+                    background-size: 300px;
+                    margin: 0;
+                    width: 45px;
+                    height: 50px;
+                }
+
+                .teaser-countdown-text {
+                    background: url(images/logo-line.png) repeat-x top left;
+                    background-size: 15px;
+                    padding: 0 10px 0;
+                    font-size: 28px;
+                    height: 50px;
+
+                    animation: teaser-underscore-blink 1s steps(4, end) infinite;
+                }
+
+                &:after {
+                    content: " ";
+                    background: url(images/logo.png) no-repeat top right;
+                    background-size: 300px;
+                    width: 235px;
+                    height: 50px;
+                }
+            }
+
+            .teaser-text {
+                margin: 3em 0;
+            }
+        }
+    }
+}
+
+@keyframes teaser-underscore-blink {
+    0% { background-position: top left };
+    70% { background-position: top left };
+    100% { background-position: 0 100px };
 }
