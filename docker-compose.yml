@@ -1,0 +1,19 @@
+wordpress:
+    build: ./env
+    links:
+        - "mysql:mysql"
+    ports:
+        - "80:80"
+    volumes:
+        - "./disobedience:/var/www/html/wp-content/themes/disobedience"
+    environment:
+        WORDPRESS_DB_NAME: "wordpress"
+        WORDPRESS_DB_HOST: "mysql:3306"
+        WORDPRESS_DB_USER: "root"
+        WORDPRESS_DB_PASSWORD: "root"
+
+mysql:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: "root"
+        MYSQL_DATABASE: "wordpress"
