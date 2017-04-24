@@ -294,6 +294,9 @@ img {
   100% {
     background-position: 0 100px; } }
 
+.post .kicker {
+  font-size: 1.8em; }
+
 .footer {
   margin: 5em;
   text-align: center; }
