@@ -131,10 +131,12 @@ img {
 
 .wpcf7 {
   font-size: 1.3em; }
-  .wpcf7 .wpcf7-response-output:before, .wpcf7 .screen-reader-response:before {
-    content: "!!! ";
-    font-weight: 400;
-    color: white; }
+  .wpcf7 .screen-reader-response {
+    visibility: hidden;
+    max-height: 10px; }
+  .wpcf7 .wpcf7-response-output {
+    color: white;
+    font-weight: bold; }
   .wpcf7 .field {
     position: relative;
     display: block;

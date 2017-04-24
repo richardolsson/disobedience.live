@@ -8,12 +8,14 @@
 .wpcf7 {
     font-size: 1.3em;
 
-    .wpcf7-response-output, .screen-reader-response {
-        &:before {
-            content: "!!! ";
-            font-weight: 400;
-            color: white;
-        }
+    .screen-reader-response {
+        visibility: hidden;
+        max-height: 10px;
+    }
+
+    .wpcf7-response-output {
+        color: white;
+        font-weight: bold;
     }
 
     .field {
