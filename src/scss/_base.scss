@@ -1,5 +1,85 @@
 body {
     font-size: 10px;
+    overflow-x: hidden;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 4000px;
+
+        background: linear-gradient(
+            90deg,
+            $c-grad00 0%,
+            $c-grad01 7%,
+            $c-grad02 14%,
+            $c-grad03 20%,
+            $c-grad04 27%,
+            $c-grad05 35%,
+            $c-grad06 40%,
+            $c-grad07 47%,
+            $c-grad08 54%,
+            $c-grad09 59%,
+            $c-grad10 61%,
+            $c-grad00 65%,
+            $c-grad01 72%,
+            $c-grad02 79%,
+            $c-grad03 85%,
+            $c-grad04 92%,
+            $c-grad05 100%
+        );
+
+        animation: moving-gradient 60s linear infinite, scale-gradient 10s infinite;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        background: url(images/noise.gif);
+        position: absolute;
+        opacity: 0.1;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .page {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+@keyframes moving-gradient {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -2600px;
+    }
+}
+
+@keyframes scale-gradient {
+    0% {
+        transform: scale(1.0, 1.0);
+    }
+    25% {
+        transform: scale(1.3, 1.0);
+    }
+    50% {
+        transform: scale(1.1, 1.0);
+    }
+    75% {
+        transform: scale(1.2, 1.0);
+    }
+    100% {
+        transform: scale(1.0, 1.0);
+    }
 }
 
 * {
