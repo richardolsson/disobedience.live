@@ -1,6 +1,8 @@
 .header {
     @include clear-after;
 
+    margin: 2em 1em 2em;
+
     .logo {
         max-width: 240px;
         height: auto;

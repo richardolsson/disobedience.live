@@ -27,7 +27,10 @@
         }
 
         .teaser-countdown {
-            font-size: 20px;
+            .teaser-countdown-text {
+                font-size: 28px;
+                white-space: nowrap;
+            }
         }
 
         .teaser-cta {
@@ -68,8 +71,8 @@
                 .teaser-countdown-text {
                     background: url(images/logo-line.png) repeat-x top left;
                     background-size: 15px;
-                    padding: 0 10px 0;
-                    font-size: 28px;
+                    padding: 5px 15px 0;
+                    font-size: 16px;
                     height: 50px;
 
                     animation: teaser-underscore-blink 1s steps(4, end) infinite;
@@ -86,6 +89,19 @@
 
             .teaser-text {
                 margin: 3em 0;
+            }
+        }
+    }
+
+    @include large-screen {
+        .teaser {
+            .teaser-countdown {
+                transform: scale(1.2, 1.2);
+
+                .teaser-countdown-text {
+                    padding: 0 20px;
+                    font-size: 24px;
+                }
             }
         }
     }
