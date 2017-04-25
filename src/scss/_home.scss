@@ -38,6 +38,7 @@
 
             a {
                 @include cta-button;
+                display: none;
             }
         }
     }
