@@ -1,4 +1,4 @@
-@mixin animated-gradient-background($pos: fixed) {
+@mixin animated-gradient-background($pos: fixed, $timescale: 1.0) {
     overflow-x: hidden;
 
     &:before {
@@ -32,7 +32,7 @@
             $c-grad05 100%
         );
 
-        animation: moving-gradient 60s linear infinite, scale-gradient 10s infinite;
+        animation: moving-gradient 60s * $timescale linear infinite, scale-gradient 10s * $timescale infinite;
     }
 
     &:after {
