@@ -38,7 +38,22 @@
 
             a {
                 @include cta-button;
+            }
+        }
+
+        #player-container {
+            display: none;
+        }
+
+        &.playing {
+            .teaser-content, .teaser-countdown, .teaser-cta {
                 display: none;
+            }
+
+            #player-container {
+                position: relative;
+                display: block;
+                z-index: 4;
             }
         }
     }
@@ -49,7 +64,7 @@
         }
 
         .teaser {
-            height: 40em;
+            height: 45em;
             font-size: 1em;
 
             .teaser-content {
