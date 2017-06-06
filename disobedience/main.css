@@ -28,7 +28,7 @@ body {
     left: 0;
     bottom: 0;
     width: 4000px;
-    background: linear-gradient(90deg, #cdd7e0 0%, #ff6524 7%, #ff4334 14%, #ff5000 20%, #f905cd 27%, #b21f81 35%, #cdd7e0 40%, #ff5000 47%, #ff2c65 54%, white 59%, #0d1bad 61%, #cdd7e0 65%, #ff6524 72%, #ff4334 79%, #ff5000 85%, #f905cd 92%, #b21f81 100%);
+    background: linear-gradient(90deg, #cdd7e0 0%, #ff6524 7%, #ff4334 14%, #ff5000 20%, #b21f81 35%, #cdd7e0 40%, #ff5000 47%, #ff2c65 54%, white 59%, #0d156c 61%, #cdd7e0 65%, #ff6524 72%, #ff4334 79%, #ff5000 85%, #b21f81 100%);
     animation: moving-gradient 300s linear infinite, scale-gradient 50s infinite; }
   body:after {
     content: "";
@@ -217,7 +217,7 @@ img {
     left: 0;
     bottom: 0;
     width: 4000px;
-    background: linear-gradient(90deg, #cdd7e0 0%, #ff6524 7%, #ff4334 14%, #ff5000 20%, #f905cd 27%, #b21f81 35%, #cdd7e0 40%, #ff5000 47%, #ff2c65 54%, white 59%, #0d1bad 61%, #cdd7e0 65%, #ff6524 72%, #ff4334 79%, #ff5000 85%, #f905cd 92%, #b21f81 100%);
+    background: linear-gradient(90deg, #cdd7e0 0%, #ff6524 7%, #ff4334 14%, #ff5000 20%, #b21f81 35%, #cdd7e0 40%, #ff5000 47%, #ff2c65 54%, white 59%, #0d156c 61%, #cdd7e0 65%, #ff6524 72%, #ff4334 79%, #ff5000 85%, #b21f81 100%);
     animation: moving-gradient 60s linear infinite, scale-gradient 10s infinite; }
   .home .teaser:after {
     content: "";
@@ -250,16 +250,23 @@ img {
       text-transform: uppercase;
       font-size: 1.4em;
       cursor: pointer;
-      transition: background-color 0.2s;
-      display: none; }
+      transition: background-color 0.2s; }
       .home .teaser .teaser-cta a:hover {
         background-color: rgba(255, 255, 255, 0.2); }
+  .home .teaser #player-container {
+    display: none; }
+  .home .teaser.playing .teaser-content, .home .teaser.playing .teaser-countdown, .home .teaser.playing .teaser-cta {
+    display: none; }
+  .home .teaser.playing #player-container {
+    position: relative;
+    display: block;
+    z-index: 4; }
 
 @media (min-width: 719px) {
   .home .header {
     margin: 2em; }
   .home .teaser {
-    height: 40em;
+    height: 45em;
     font-size: 1em; }
     .home .teaser .teaser-content {
       padding: 10em 10em 2em; }
