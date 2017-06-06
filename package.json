@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/richardolsson/disobedience.live#readme",
   "devDependencies": {
+    "browserify": "^14.4.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-watch": "^4.3.11",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
