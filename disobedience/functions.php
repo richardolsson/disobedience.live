@@ -28,7 +28,7 @@ function disobedience_register_post_types() {
             'thumbnail'
         ),
         'public' => true,
-        'has_archive' => false,
+        'has_archive' => true,
     ));
 
     register_post_type('voice', array(
@@ -43,7 +43,7 @@ function disobedience_register_post_types() {
             'thumbnail'
         ),
         'public' => true,
-        'has_archive' => false,
+        'has_archive' => true,
     ));
 }
 
