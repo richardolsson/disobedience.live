@@ -6,6 +6,7 @@ function disobedience_init() {
 
     disobedience_register_nav_menus();
     disobedience_register_post_types();
+    disobedience_register_fields();
 }
 
 function disobedience_register_nav_menus() {
@@ -44,4 +45,8 @@ function disobedience_register_post_types() {
         'public' => true,
         'has_archive' => false,
     ));
+}
+
+function disobedience_register_fields() {
+    require('fields/facts.php');
 }
