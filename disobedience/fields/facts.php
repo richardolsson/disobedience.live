@@ -8,7 +8,7 @@ acf_add_local_field_group(array (
         array (
             'key' => 'field_594a575a09b0b',
             'label' => 'Headline',
-            'name' => 'headline',
+            'name' => 'facts_headline',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
