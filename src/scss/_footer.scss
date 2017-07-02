@@ -1,4 +1,12 @@
 .footer {
     margin: 5em;
     text-align: center;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
