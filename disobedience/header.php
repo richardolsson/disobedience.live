@@ -17,8 +17,7 @@
     <body <?php body_class();?>>
         <div class="page">
             <div class="header">
-                <a href="/"><img class="logo" alt="Troja Scenkonst"
-                    src="<?php echo get_template_directory_uri();?>/images/logo.png"></a>
+                <a class="logo" href="/">DIS_OBEDIENCE.live</a>
                 <div class="menu">
                     <?php wp_nav_menu(array('theme_location' => 'header-menu'));?>
                 </div>

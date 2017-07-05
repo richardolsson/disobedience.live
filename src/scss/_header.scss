@@ -4,19 +4,22 @@
     margin: 2em 1em 2em;
 
     .logo {
-        max-width: 240px;
-        height: auto;
+        display: block;
+        font-family: $f-alt-gothic;
+        font-size: 2em;
+        text-decoration: none;
     }
 
     ul.menu {
         @include list-reset;
 
         margin: 1em 0;
+        font-size: 2em;
 
         .menu-item {
             float: left;
             margin: 0 1em 0 0;
-            font-size: 1.2em;
+            line-height: 100%;
 
             &.lang-item {
                 margin-right: 0;
@@ -35,6 +38,7 @@
 
             a {
                 text-decoration: none;
+                font-family: $f-alt-gothic;
 
                 &:hover {
                     text-decoration: underline;
@@ -51,11 +55,14 @@
 
     @include medium-screen {
         margin: 2em 3em 2em;
+        font-size: 1.3em;
+
+        .logo {
+            float: left;
+        }
 
         div.menu {
-            margin: 0.5em 0 1em;
             float: right;
-            font-size: 1.3em;
 
             ul.menu {
                 margin: 0;
