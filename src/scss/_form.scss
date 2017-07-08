@@ -1,0 +1,75 @@
+form {
+    position: relative;
+    @include animated-gradient-background(absolute);
+
+    textarea, input {
+        background: transparent;
+        border-width: 0;
+    }
+
+    ul {
+        @include list-reset;
+        margin: 2em 10%;
+
+        position: relative;
+        z-index: 2;
+
+        * {
+            box-sizing: border-box;
+        }
+
+        li {
+            margin: 1em 0;
+
+            &.text-item {
+                @include clear-after;
+
+                border-bottom: 2px solid black;
+                position: relative;
+                height: 4em;
+
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 0;
+                }
+
+                input {
+                    position: absolute;
+                    top: 1em;
+                    left: 5%;
+                    width: 95%;
+                    font-size: 1.5em;
+                    z-index: 1;
+                }
+            }
+
+            &.file-item {
+                border: 2px solid black;
+                padding: 2em;
+                text-align: center;
+            }
+
+            &.textarea-item {
+                label {
+                    display: block;
+                    margin: 0 0 0.5em;
+                }
+
+                textarea {
+                    display: block;
+                    width: 100%;
+                    border: 2px solid black;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+
+    @include medium-screen {
+        font-size: 1.5em;
+    }
+}

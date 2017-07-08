@@ -1,0 +1,14 @@
+.event-form {
+    .event-form-date, .event-form-start {
+        margin-right: 2%;
+    }
+
+    .event-form-date, .event-form-start, .event-form-end {
+        float: left;
+        width: 32%;
+    }
+
+    .event-form-city {
+        clear: both;
+    }
+}
