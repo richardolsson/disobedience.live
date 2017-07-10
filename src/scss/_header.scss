@@ -1,40 +1,34 @@
-.header {
-    @include clear-after;
-
-    margin: 2em 1em 2em;
-
-    .logo {
-        max-width: 240px;
-        height: auto;
-    }
+.lang-switch {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
 
     ul.menu {
         @include list-reset;
 
-        margin: 1em 0;
+        font-size: 1.3em;
 
         .menu-item {
             float: left;
             margin: 0 1em 0 0;
-            font-size: 1.2em;
+            line-height: 100%;
+            text-transform: uppercase;
+            margin-right: 0;
 
-            &.lang-item {
-                margin-right: 0;
+            &:after {
+                content: "/";
+                margin: 0 0.1em;
+            }
 
+            &:last-child {
                 &:after {
-                    content: "/";
-                    margin: 0 0.1em;
-                }
-
-                &:last-child {
-                    &:after {
-                        content: "";
-                    }
+                    content: "";
                 }
             }
 
             a {
                 text-decoration: none;
+                font-family: $f-alt-gothic;
 
                 &:hover {
                     text-decoration: underline;
@@ -49,13 +43,57 @@
         }
     }
 
+}
+
+.header {
+    @include clear-after;
+
+    margin: 3em 1em 2em;
+
+    .logo {
+        display: block;
+        font-family: $f-alt-gothic;
+        font-size: 2em;
+        text-decoration: none;
+    }
+
+    ul.menu {
+        @include list-reset;
+
+        margin: 1em 0;
+        font-size: 2em;
+
+        .menu-item {
+            float: left;
+            margin: 0 1em 0 0;
+            line-height: 100%;
+            text-transform: uppercase;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a {
+                text-decoration: none;
+                font-family: $f-alt-gothic;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
     @include medium-screen {
-        margin: 2em 3em 2em;
+        margin: 3em 3em 2em;
+        font-size: 1.3em;
+
+        .logo {
+            float: left;
+        }
 
         div.menu {
-            margin: 0.5em 0 1em;
             float: right;
-            font-size: 1.3em;
 
             ul.menu {
                 margin: 0;

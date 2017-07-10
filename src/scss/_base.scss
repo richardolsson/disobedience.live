@@ -1,8 +1,6 @@
 body {
     font-size: 10px;
 
-    @include animated-gradient-background(fixed, 5.0);
-
     .page {
         position: relative;
         z-index: 2;
@@ -10,7 +8,7 @@ body {
 }
 
 * {
-    font-family: 'Space Mono', sans-serif;
+    font-family: $f-mono, sans-serif;
     font-size: inherit;
 }
 

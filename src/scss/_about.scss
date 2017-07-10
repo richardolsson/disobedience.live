@@ -1,0 +1,63 @@
+.about-page {
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 3.6em;
+        letter-spacing: 0.1em;
+        padding: 2em;
+        color: white;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .countdown {
+        position: relative;
+        .gradient {
+            @include animated-gradient-background(absolute);
+            width: 50%;
+            height: auto;
+            position: relative;
+            height: 24em;
+        }
+
+        h2 {
+            position: absolute;
+            right: 5%;
+            top: 30%;
+            font-size: 3em;
+        }
+    }
+
+    img.alignright {
+        width: 100%;
+    }
+
+    img.aligncenter {
+        display: block;
+        margin: 2em auto;
+    }
+
+    @include medium-screen {
+        .countdown {
+            .gradient {
+                width: 80%;
+                left: -30%;
+            }
+
+            h2 {
+                right: 20%;
+                top: 30%;
+            }
+        }
+
+        p {
+            max-width: 80%;
+            margin: 2em auto;
+        }
+
+        img.alignright {
+            position: relative;
+            right: -30%;
+        }
+    }
+}

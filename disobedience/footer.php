@@ -1,4 +1,6 @@
             <div class="footer">
+                Initiated by Troja Scenkonst |
+                <a href="http://trojascenkonst.se">trojascenkonst.se</a> |
                 <a href="mailto:info@trojascenkonst.se">info@trojascenkonst.se</a>
             </div>
         </div>
