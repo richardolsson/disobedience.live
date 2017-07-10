@@ -39,6 +39,10 @@ if (isset($_POST)) {
         update_field('contact_phone', sanitize_text_field($_POST['phone']), $event_id);
         update_field('link', sanitize_text_field($_POST['link']), $event_id);
         update_field('open', sanitize_text_field($_POST['open']), $event_id);
+
+        $done_page = get_field('event_submitted_page', 'option');
+        $done_page_url = get_permalink($done_page->ID);
+        header('Location: '.$done_page_url);
     }
     else {
         $error = 'Form must be re-submitted.';

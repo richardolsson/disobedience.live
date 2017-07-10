@@ -7,6 +7,7 @@ function disobedience_init() {
     disobedience_register_nav_menus();
     disobedience_register_post_types();
     disobedience_register_fields();
+    disobedience_config_admin();
 }
 
 function disobedience_register_nav_menus() {
@@ -64,4 +65,24 @@ function disobedience_register_post_types() {
 function disobedience_register_fields() {
     require('fields/facts.php');
     require('fields/event.php');
+    require('fields/options/misc.php');
+}
+
+function disobedience_config_admin() {
+    if( function_exists('acf_add_local_field_group') ):
+    acf_add_options_page(array(
+        'page_title' => __('Disobedience options', 'disobedience'),
+        'menu_title' => __('Disobedience', 'disobedience'),
+        'menu_slug' => 'disobedience',
+        'capability' => 'edit_posts',
+        'position' => 5,
+        'redirect' => true,
+    ));
+
+    acf_add_options_sub_page(array(
+        'title' => __('Misc settings', 'disobedience'),
+        'menu_slug' => 'misc',
+        'parent' => 'disobedience'
+    ));
+    endif;
 }
