@@ -389,10 +389,8 @@ img {
 .post .kicker {
   font-size: 1.8em; }
 
-.post .post-content a {
-  color: white; }
-  .post .post-content a:hover {
-    color: #f905cd; }
+.post .post-content a:hover {
+  color: #f905cd; }
 
 .post .post-content ul {
   font-size: 1.5em; }
