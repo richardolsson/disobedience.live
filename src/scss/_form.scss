@@ -1,15 +1,23 @@
 form {
-    position: relative;
-    @include animated-gradient-background(absolute);
-
     textarea, input {
         background: transparent;
         border-width: 0;
     }
 
-    ul {
+    input[type=submit] {
+        @include cta-button;
+        display: block;
+
+        color: black;
+        border-color: black;
+
+        margin: 2em auto;
+    }
+
+    ul.form-items {
+        @include animated-gradient-background(absolute);
         @include list-reset;
-        margin: 2em 10%;
+        padding: 2em 10%;
 
         position: relative;
         z-index: 2;
@@ -20,6 +28,7 @@ form {
 
         li {
             margin: 1em 0;
+            position: relative;
 
             &.text-item {
                 @include clear-after;
@@ -43,7 +52,7 @@ form {
                     left: 5%;
                     width: 95%;
                     font-size: 1.5em;
-                    z-index: 1;
+                    z-index: 100;
                 }
             }
 
@@ -51,6 +60,11 @@ form {
                 border: 2px solid black;
                 padding: 2em;
                 text-align: center;
+
+                input {
+                    position: relative;
+                    z-index: 100;
+                }
             }
 
             &.textarea-item {
@@ -64,6 +78,8 @@ form {
                     width: 100%;
                     border: 2px solid black;
                     font-size: 1.5em;
+                    position: relative;
+                    z-index: 100;
                 }
             }
         }

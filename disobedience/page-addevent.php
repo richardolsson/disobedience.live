@@ -4,7 +4,35 @@
  * Template Post Type: page
 */
 
-acf_form_head();
+if (isset($_POST)) {
+    if (!function_exists('wp_handle_upload')) {
+        require_once( ABSPATH . 'wp-admin/includes/file.php' );
+    }
+
+    if (isset($_POST['addevent_nonce']) && wp_verify_nonce($_POST['addevent_nonce'], 'addevent')) {
+        $event_id = wp_insert_post(array(
+            'post_title' => sanitize_title($_POST['title']),
+            'post_content' => sanitize_text_field($_POST['info']),
+        ));
+
+        $file = wp_handle_upload($_FILES['image'], array('action' => 'addevent'));
+        if (isset($file) && !isset($file['error'])) {
+            $att_data = array(
+                'post_title' => basename($file['file']),
+                'post_content' => '',
+                'post_status' => 'draft',
+                'post_mime_type' => $file['type'],
+            );
+
+            $att_id = wp_insert_attachment($att_data, $file['file'], $event_id);
+            $meta_id = set_post_thumbnail($event_id, $att_id);
+        }
+    }
+    else {
+        $error = 'Form must be re-submitted.';
+    }
+}
+
 the_post();
 get_header();
 ?>
@@ -17,8 +45,11 @@ get_header();
         <?php the_content(); ?>
     </div>
     <div class="event-form">
-        <form>
-            <ul>
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="addevent">
+            <?php wp_nonce_field('addevent', 'addevent_nonce'); ?>
+
+            <ul class="form-items">
                 <li class="text-item event-form-title">
                     <label for="event-form-title">Event Title</label>
                     <input id="event-form-title" type="text" name="title">
@@ -45,7 +76,7 @@ get_header();
                 </li>
                 <li class="textarea-item event-form-info">
                     <label for="event-form-info">Event information</label>
-                    <textarea id="event-form-info" name="title"></textarea>
+                    <textarea id="event-form-info" name="info"></textarea>
                 </li>
                 <li class="text-item event-form-contact">
                     <label for="event-form-contact">Name of contact person</label>
@@ -71,6 +102,7 @@ get_header();
                     <label for="event-form-open">Event is open (anyone may attend)</label>
                 </li>
             </ul>
+            <input class="submit-button" type="submit" value="Add event to calendar">
         </form>
     </div>
 </div>
