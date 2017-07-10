@@ -44,6 +44,9 @@ function disobedience_register_post_types() {
         ),
         'public' => true,
         'has_archive' => true,
+        'rewrite' => array(
+            'slug' => __('events', 'disobedience'),
+        ),
     ));
 
     register_post_type('voice', array(

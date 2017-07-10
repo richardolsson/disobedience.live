@@ -34,3 +34,51 @@
         }
     }
 }
+
+.events-table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    border-bottom: 2px solid black;
+
+    th, td {
+        padding: 0 2em 0 1em;
+    }
+
+    th {
+        text-transform: uppercase;
+        text-align: left;
+        border-bottom: 2px solid black;
+    }
+
+    tr:nth-of-type(3n+0) {
+        td {
+            position: relative;
+            left: -1em;
+        }
+    }
+
+    tr:nth-of-type(2n+0) {
+        td {
+            position: relative;
+            left: 0.5em;
+        }
+    }
+
+    .title, .organizer {
+        display: block;
+    }
+
+    .organizer {
+        font-size: 0.7em;
+    }
+
+    @include medium-screen {
+        width: 100%;
+
+        th, td {
+            font-size: 1.5em;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+    }
+}
