@@ -15,6 +15,9 @@
         <script src="<?php echo get_template_directory_uri();?>/main.js?v=170607"></script>
     </head>
     <body <?php body_class();?>>
+        <div class="lang-switch">
+            <?php wp_nav_menu(array('theme_location' => 'lang-menu'));?>
+        </div>
         <div class="page">
             <div class="header">
                 <a class="logo" href="/">DIS_OBEDIENCE.live</a>

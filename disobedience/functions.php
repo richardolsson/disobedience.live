@@ -12,6 +12,10 @@ function disobedience_init() {
 
 function disobedience_register_nav_menus() {
     register_nav_menus(array(
+        'lang-menu' => __('Language menu', 'disobedience'),
+    ));
+
+    register_nav_menus(array(
         'header-menu' => __('Header menu', 'disobedience'),
     ));
 }
