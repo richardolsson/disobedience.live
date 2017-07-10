@@ -35,6 +35,16 @@
     }
 }
 
+.events-map {
+    height: 30em;
+    height: 30vmax;
+
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+}
+
 .events-table {
     border-spacing: 0;
     border-collapse: collapse;
