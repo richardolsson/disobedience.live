@@ -31,6 +31,20 @@ function disobedience_register_post_types() {
         'has_archive' => true,
     ));
 
+    register_post_type('event', array(
+        'labels' => array(
+            'name' => __('Events', 'disobedience'),
+            'singular_name' => __('Event', 'disobedience'),
+        ),
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        ),
+        'public' => true,
+        'has_archive' => true,
+    ));
+
     register_post_type('voice', array(
         'labels' => array(
             'name' => __('Voices', 'disobedience'),
@@ -49,4 +63,5 @@ function disobedience_register_post_types() {
 
 function disobedience_register_fields() {
     require('fields/facts.php');
+    require('fields/event.php');
 }

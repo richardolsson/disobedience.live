@@ -11,6 +11,7 @@ if (isset($_POST)) {
 
     if (isset($_POST['addevent_nonce']) && wp_verify_nonce($_POST['addevent_nonce'], 'addevent')) {
         $event_id = wp_insert_post(array(
+            'post_type' => 'event',
             'post_title' => sanitize_title($_POST['title']),
             'post_content' => sanitize_text_field($_POST['info']),
         ));
@@ -27,6 +28,17 @@ if (isset($_POST)) {
             $att_id = wp_insert_attachment($att_data, $file['file'], $event_id);
             $meta_id = set_post_thumbnail($event_id, $att_id);
         }
+
+        update_field('date', sanitize_text_field($_POST['date']), $event_id);
+        update_field('start_time', sanitize_text_field($_POST['start']), $event_id);
+        update_field('end_time', sanitize_text_field($_POST['end']), $event_id);
+        update_field('city', sanitize_text_field($_POST['city']), $event_id);
+        update_field('country', sanitize_text_field($_POST['country']), $event_id);
+        update_field('contact_name', sanitize_text_field($_POST['contact']), $event_id);
+        update_field('contact_email', sanitize_text_field($_POST['email']), $event_id);
+        update_field('contact_phone', sanitize_text_field($_POST['phone']), $event_id);
+        update_field('link', sanitize_text_field($_POST['link']), $event_id);
+        update_field('open', sanitize_text_field($_POST['open']), $event_id);
     }
     else {
         $error = 'Form must be re-submitted.';
@@ -98,7 +110,7 @@ get_header();
                     <input id="event-form-image" type="file" name="image">
                 </li>
                 <li class="event-form-open">
-                    <input id="event-form-open" type="checkbox" name="open">
+                    <input id="event-form-open" type="checkbox" name="open" checked="checked">
                     <label for="event-form-open">Event is open (anyone may attend)</label>
                 </li>
             </ul>

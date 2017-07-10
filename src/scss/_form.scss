@@ -2,6 +2,8 @@ form {
     textarea, input {
         background: transparent;
         border-width: 0;
+        position: relative;
+        z-index: 100;
     }
 
     input[type=submit] {
@@ -52,7 +54,6 @@ form {
                     left: 5%;
                     width: 95%;
                     font-size: 1.5em;
-                    z-index: 100;
                 }
             }
 
@@ -60,11 +61,6 @@ form {
                 border: 2px solid black;
                 padding: 2em;
                 text-align: center;
-
-                input {
-                    position: relative;
-                    z-index: 100;
-                }
             }
 
             &.textarea-item {
@@ -78,8 +74,6 @@ form {
                     width: 100%;
                     border: 2px solid black;
                     font-size: 1.5em;
-                    position: relative;
-                    z-index: 100;
                 }
             }
         }
