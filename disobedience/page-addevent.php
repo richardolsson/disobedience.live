@@ -29,6 +29,7 @@ if (isset($_POST)) {
             $meta_id = set_post_thumbnail($event_id, $att_id);
         }
 
+        update_field('organizer', sanitize_text_field($_POST['organizer']), $event_id);
         update_field('date', sanitize_text_field($_POST['date']), $event_id);
         update_field('start_time', sanitize_text_field($_POST['start']), $event_id);
         update_field('end_time', sanitize_text_field($_POST['end']), $event_id);
@@ -69,6 +70,10 @@ get_header();
                 <li class="text-item event-form-title">
                     <label for="event-form-title">Event Title</label>
                     <input id="event-form-title" type="text" name="title">
+                </li>
+                <li class="text-item event-form-organizer">
+                    <label for="event-form-organizer">Event Organizer (e.g. organization)</label>
+                    <input id="event-form-organizer" type="text" name="organizer">
                 </li>
                 <li class="text-item event-form-date">
                     <label for="event-form-date">Date</label>
