@@ -93,3 +93,9 @@ function disobedience_config_admin() {
     ));
     endif;
 }
+
+add_filter('acf/fields/google_map/api', 'disobedience_acf_google_map_api');
+function disobedience_acf_google_map_api($api){
+    $api['key'] = 'AIzaSyDNTh_Ay85-bSJ5WO1v-Sknl7R_IEBMVx4';
+    return $api;
+}
