@@ -1,3 +1,9 @@
+.wpcf7 {
+    position: relative;
+    padding: 1em;
+    @include animated-gradient-background(absolute);
+}
+
 form {
     textarea, input {
         background: transparent;
