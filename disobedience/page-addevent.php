@@ -113,7 +113,7 @@ get_header();
                 </li>
                 <li class="text-item event-form-link">
                     <label for="event-form-link">Link (e.g. Facebook event)</label>
-                    <input id="event-form-link" type="url" name="link">
+                    <input id="event-form-link" type="text" name="link">
                 </li>
                 <li class="file-item event-form-image">
                     <input id="event-form-image" type="file" name="image">
