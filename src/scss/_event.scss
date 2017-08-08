@@ -15,6 +15,17 @@
     .event-form-city {
         clear: both;
     }
+
+    .event-form-image {
+        font-size: 80%;
+
+        span {
+            display: block;
+            margin: 0 0 1em;
+
+            font-size: 125%;
+        }
+    }
 }
 
 .event-added-page {

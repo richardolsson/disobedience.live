@@ -121,6 +121,7 @@ get_header();
                     <input id="event-form-link" type="text" name="link">
                 </li>
                 <li class="file-item event-form-image">
+                    <span>Upload event photo here</span>
                     <input id="event-form-image" type="file" name="image">
                 </li>
                 <li class="event-form-open">
