@@ -88,8 +88,8 @@ acf_add_local_field_group(array (
     'fields' => array (
         array (
             'key' => 'field_596318d10b041',
-            'label' => 'Date',
-            'name' => 'date',
+            'label' => 'Start date',
+            'name' => 'start_date',
             'type' => 'date_picker',
             'instructions' => '',
             'required' => 0,
@@ -118,6 +118,23 @@ acf_add_local_field_group(array (
             ),
             'display_format' => 'H:i',
             'return_format' => 'H:i',
+        ),
+        array (
+            'key' => 'event_end_date',
+            'label' => 'End date',
+            'name' => 'end_date',
+            'type' => 'date_picker',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'display_format' => 'd/m/Y',
+            'return_format' => 'd/m/Y',
+            'first_day' => 1,
         ),
         array (
             'key' => 'field_596319320b043',

@@ -30,9 +30,10 @@ if (isset($_POST)) {
         }
 
         update_field('organizer', sanitize_text_field($_POST['organizer']), $event_id);
-        update_field('date', sanitize_text_field($_POST['date']), $event_id);
-        update_field('start_time', sanitize_text_field($_POST['start']), $event_id);
-        update_field('end_time', sanitize_text_field($_POST['end']), $event_id);
+        update_field('start_date', sanitize_text_field($_POST['start_date']), $event_id);
+        update_field('start_time', sanitize_text_field($_POST['start_time']), $event_id);
+        update_field('end_date', sanitize_text_field($_POST['end_date']), $event_id);
+        update_field('end_time', sanitize_text_field($_POST['end_time']), $event_id);
         update_field('city', sanitize_text_field($_POST['city']), $event_id);
         update_field('country', sanitize_text_field($_POST['country']), $event_id);
         update_field('contact_name', sanitize_text_field($_POST['contact']), $event_id);
@@ -76,16 +77,20 @@ get_header();
                     <input id="event-form-organizer" type="text" name="organizer">
                 </li>
                 <li class="text-item event-form-date">
-                    <label for="event-form-date">Date</label>
-                    <input id="event-form-date" type="date" name="date">
+                    <label for="event-form-start-date">Start date</label>
+                    <input id="event-form-start-date" type="date" name="start_date">
                 </li>
-                <li class="text-item event-form-start">
-                    <label for="event-form-start">Starts</label>
-                    <input id="event-form-start" type="time" name="start">
+                <li class="text-item event-form-time">
+                    <label for="event-form-start-time">Start time</label>
+                    <input id="event-form-start-time" type="time" name="start_time">
                 </li>
-                <li class="text-item event-form-end">
-                    <label for="event-form-end">Ends</label>
-                    <input id="event-form-end" type="time" name="end">
+                <li class="text-item event-form-date">
+                    <label for="event-form-end-date">End date</label>
+                    <input id="event-form-end-date" type="date" name="end_date">
+                </li>
+                <li class="text-item event-form-time">
+                    <label for="event-form-end-time">End time</label>
+                    <input id="event-form-end-time" type="time" name="end_time">
                 </li>
                 <li class="text-item event-form-city">
                     <label for="event-form-city">City</label>

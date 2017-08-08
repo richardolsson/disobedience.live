@@ -1,11 +1,15 @@
 .event-form {
-    .event-form-date, .event-form-start {
+    .event-form-date {
         margin-right: 2%;
     }
 
-    .event-form-date, .event-form-start, .event-form-end {
+    .event-form-date, .event-form-time {
         float: left;
-        width: 32%;
+        width: 49%;
+    }
+
+    .event-form-date {
+        clear: left;
     }
 
     .event-form-city {
