@@ -40,7 +40,7 @@ if (isset($_POST)) {
         update_field('contact_email', sanitize_text_field($_POST['email']), $event_id);
         update_field('contact_phone', sanitize_text_field($_POST['phone']), $event_id);
         update_field('link', sanitize_text_field($_POST['link']), $event_id);
-        update_field('open', sanitize_text_field($_POST['open']), $event_id);
+        update_field('open', $_POST['open'] == 'yes', $event_id);
 
         $done_page = get_field('event_submitted_page', 'option');
         $done_page_url = get_permalink($done_page->ID);
@@ -122,13 +122,34 @@ get_header();
                 </li>
                 <li class="file-item event-form-image">
                     <span>Upload event photo here</span>
+                    <div class="upload-warning">
+                        Uploading the image may take some time. After submitting the form,
+                        don't leave the page until it's done.
+                    </div>
                     <input id="event-form-image" type="file" name="image">
                 </li>
                 <li class="event-form-open">
-                    <input id="event-form-open" type="checkbox" name="open" checked="checked">
-                    <label for="event-form-open">Event is open (anyone may attend)</label>
+                    The screening is:
+                    <ul class="radio-options">
+                        <li class="radio-option">
+                            <input id="event-form-open-yes" type="radio" name="open" value="yes" checked="checked">
+                            <label for="event-form-open-yes">Public/open to anyone</label>
+                        </li>
+                        <li class="radio-option">
+                            <input id="event-form-open-no" type="radio" name="open" value="no">
+                            <label for="event-form-open-no">For invited groups or guests only</label>
+                            <p class="small-print">
+                                Your event will still be visible on the website, but it will be described as "not public"
+                                and you can choose to not specify the street address (for example: screenings at home or
+                                screenings in classrooms).
+                            </p>
+                        </li>
+                    </ul>
                 </li>
             </ul>
+            <p>
+                By submitting this form you assert that you have read and understood the basic values.
+            </p>
             <input class="submit-button" type="submit" value="Add event to calendar">
         </form>
     </div>

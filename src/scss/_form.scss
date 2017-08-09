@@ -83,9 +83,29 @@ form {
                 }
             }
         }
+
+        .radio-option {
+            position: relative;
+            padding-left: 2em;
+
+            input {
+                position: absolute;
+                left: 0;
+                top: 0.1em;
+            }
+        }
+    }
+
+    .small-print {
+        font-size: 90%;
+        margin: 0;
     }
 
     @include medium-screen {
         font-size: 1.5em;
+
+        .small-print {
+            font-size: 80%;
+        }
     }
 }
