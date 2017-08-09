@@ -9,7 +9,7 @@
         <div class="info">
             <p class="title"><?php the_title();?></p>
             <p class="basic">
-                <?php the_field('date');?>,
+                <?php the_field('start_date');?>,
                 <?php the_field('start_time');?>,
                 <?php the_field('city')?>,
                 <?php the_field('country')?>

@@ -21,7 +21,7 @@
         ?>
         <tr class="events-row">
             <td><?php the_field('city')?>, <?php the_field('country');?></td>
-            <td><?php the_field('date'); ?></td>
+            <td><?php the_field('start_date'); ?></td>
             <td><?php the_field('start_time'); ?></td>
             <td>
                 <a class="title" href="<?php the_permalink();?>"><?php the_title();?></a>
