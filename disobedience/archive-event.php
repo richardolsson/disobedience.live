@@ -51,6 +51,31 @@
     <?php endwhile;?>
     ];
 
+    function initMarker(ev, map, bounds) {
+        var pos = new google.maps.LatLng(ev.lat, ev.lng);
+
+        bounds.extend(pos);
+
+        var image = {
+            url: '<?php echo get_template_directory_uri();?>/images/marker-green.png',
+            size: new google.maps.Size(64, 90),
+            scaledSize: new google.maps.Size(32, 45),
+            origin: new google.maps.Point(0,0),
+            anchor: new google.maps.Point(16, 44),
+        };
+
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            icon: image,
+            title: ev.title,
+        });
+
+        marker.addListener('click', function() {
+            window.location = ev.link;
+        });
+    }
+
     function initMap() {
         // Create a map object and specify the DOM element for display.
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -63,29 +88,7 @@
         var bounds = new google.maps.LatLngBounds();
 
         for (var i = 0; i < events.length; i++) {
-            var ev = events[i];
-            var pos = new google.maps.LatLng(ev.lat, ev.lng);
-
-            bounds.extend(pos);
-
-            var image = {
-                url: '<?php echo get_template_directory_uri();?>/images/marker-green.png',
-                size: new google.maps.Size(64, 90),
-                scaledSize: new google.maps.Size(32, 45),
-                origin: new google.maps.Point(0,0),
-                anchor: new google.maps.Point(16, 44),
-            };
-
-            var marker = new google.maps.Marker({
-                position: pos,
-                map: map,
-                icon: image,
-                title: ev.title,
-            });
-
-            marker.addListener('click', function() {
-                window.location = ev.link;
-            });
+            initMarker(events[i], map, bounds);
         }
 
         map.fitBounds(bounds);
