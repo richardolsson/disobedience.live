@@ -29,6 +29,29 @@ acf_add_local_field_group(array (
             'return_format' => 'object',
             'ui' => 1,
         ),
+        array (
+            'key' => 'options_event_terms_page',
+            'label' => 'Event terms page',
+            'name' => 'event_terms_page',
+            'type' => 'post_object',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array (
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'post_type' => array (
+                0 => 'page',
+            ),
+            'taxonomy' => array (
+            ),
+            'allow_null' => 0,
+            'multiple' => 0,
+            'return_format' => 'object',
+            'ui' => 1,
+        ),
     ),
     'location' => array (
         array (

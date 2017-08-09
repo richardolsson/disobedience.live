@@ -49,6 +49,9 @@ if (isset($_POST)) {
     else {
         $error = 'Form must be re-submitted.';
     }
+
+    $terms_page = get_field('event_terms_page', 'option');
+    $terms_page_url = get_permalink($terms_page->ID);
 }
 
 the_post();
@@ -149,6 +152,9 @@ get_header();
             </ul>
             <p>
                 By submitting this form you assert that you have read and understood the basic values.
+                <?php if ($terms_page): ?>
+                <a href="<?php echo $terms_page_url;?>">Read the basic values</a>
+                <?php endif; ?>
             </p>
             <input class="submit-button" type="submit" value="Add event to calendar">
         </form>
