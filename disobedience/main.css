@@ -519,20 +519,46 @@ form ul.form-items {
       width: 100%;
       border: 2px solid black;
       font-size: 1.5em; }
+  form ul.form-items .radio-option {
+    position: relative;
+    padding-left: 2em; }
+    form ul.form-items .radio-option input {
+      position: absolute;
+      left: 0;
+      top: 0.1em; }
+
+form .small-print {
+  font-size: 90%;
+  margin: 0; }
 
 @media (min-width: 719px) {
   form {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+    form .small-print {
+      font-size: 80%; } }
 
-.event-form .event-form-date, .event-form .event-form-start {
+.event-form .event-form-date {
   margin-right: 2%; }
 
-.event-form .event-form-date, .event-form .event-form-start, .event-form .event-form-end {
+.event-form .event-form-date, .event-form .event-form-time {
   float: left;
-  width: 32%; }
+  width: 49%; }
+
+.event-form .event-form-date {
+  clear: left; }
 
 .event-form .event-form-city {
   clear: both; }
+
+.event-form .event-form-image {
+  font-size: 80%; }
+  .event-form .event-form-image span {
+    display: block;
+    font-size: 125%; }
+  .event-form .event-form-image .upload-warning {
+    margin: 0 auto 1em;
+    font-size: 80%;
+    max-width: 44em; }
 
 .event-added-page {
   position: relative;
