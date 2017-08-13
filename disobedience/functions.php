@@ -13,6 +13,7 @@ function disobedience_init() {
 
 function disobedience_register_thumbnails() {
     add_image_size('activist-thumbnail', 315, 360, true);
+    add_image_size('voice-thumbnail', 600, 340, true);
 }
 
 function disobedience_register_nav_menus() {

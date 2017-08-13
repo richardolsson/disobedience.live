@@ -6,25 +6,6 @@ acf_add_local_field_group(array (
     'title' => 'Facts',
     'fields' => array (
         array (
-            'key' => 'field_594a575a09b0b',
-            'label' => 'Headline',
-            'name' => 'facts_headline',
-            'type' => 'text',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array (
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'default_value' => '',
-            'placeholder' => '',
-            'prepend' => '',
-            'append' => '',
-            'maxlength' => '',
-        ),
-        array (
             'key' => 'field_594a55e2184a2',
             'label' => 'Facts',
             'name' => 'facts',

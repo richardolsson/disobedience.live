@@ -72,7 +72,7 @@
         <?php endforeach; ?>
         </p>
         <p class="cta">
-            <a href="/voices">Hear their voices</a>
+            <a href="<?php echo get_post_type_archive_link('voice');?>">Hear their voices</a>
         </p>
     </div>
     <div class="events">
