@@ -74,6 +74,44 @@
         }
     }
 
+    .voices {
+        position: relative;
+        min-height: 500px;
+
+        h2 {
+            margin-bottom: 1em;
+        }
+
+        p {
+            position: relative;
+            text-align: left;
+            margin: 0;
+            z-index: 1;
+            font-size: 1.8em;
+        }
+
+        .cta {
+            font-size: inherit;
+            text-align: left;
+            margin-top: 3em;
+
+            a {
+                @include cta-button-black;
+            }
+        }
+
+        .gradient {
+            position: absolute;
+            top: 9em;
+            right: 0;
+            left: 46%;
+            z-index: 0;
+            height: 60%;
+
+            @include animated-gradient-background(absolute);
+        }
+    }
+
     .events {
         #map {
             height: 50vh;

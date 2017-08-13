@@ -26,6 +26,11 @@
         'post_type' => 'activist',
         'fields' => 'ids',
     ));
+
+    $voices = get_posts(array(
+        'post_type' => 'voice',
+        'fields' => 'ids',
+    ));
 ?>
 <?php get_header();?>
 <?php the_post();?>
@@ -50,6 +55,19 @@
         </ul>
     </div>
     <div class="voices">
+        <h2>Other voices</h2>
+        <div class="gradient"></div>
+        <p>
+            Hear the thoughts of people affected by the action:
+        </p>
+        <p>
+        <?php foreach ($voices as $id): $url = get_the_permalink($id); ?>
+            <?php echo get_the_title($id);?><br>
+        <?php endforeach; ?>
+        </p>
+        <p class="cta">
+            <a href="/voices">Hear their voices</a>
+        </p>
     </div>
     <div class="events">
         <h2>Public screenings</h2>

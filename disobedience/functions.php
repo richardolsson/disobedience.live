@@ -71,6 +71,9 @@ function disobedience_register_post_types() {
         ),
         'public' => true,
         'has_archive' => true,
+        'rewrite' => array(
+            'slug' => __('voices', 'disobedience'),
+        ),
     ));
 }
 
