@@ -6,8 +6,13 @@ function disobedience_init() {
 
     disobedience_register_nav_menus();
     disobedience_register_post_types();
+    disobedience_register_thumbnails();
     disobedience_register_fields();
     disobedience_config_admin();
+}
+
+function disobedience_register_thumbnails() {
+    add_image_size('activist-thumbnail', 315, 360, true);
 }
 
 function disobedience_register_nav_menus() {
@@ -98,4 +103,23 @@ add_filter('acf/fields/google_map/api', 'disobedience_acf_google_map_api');
 function disobedience_acf_google_map_api($api){
     $api['key'] = 'AIzaSyDNTh_Ay85-bSJ5WO1v-Sknl7R_IEBMVx4';
     return $api;
+}
+
+function get_excerpt_by_id($post_id){
+    $post = get_post($post_id);
+    $excerpt = $post->post_excerpt;
+
+    if (empty($excerpt)) {
+        $excerpt = $post->post_content;
+        $excerpt_length = 30;
+        $excerpt = strip_tags(strip_shortcodes($excerpt));
+        $words = explode(' ', $excerpt, $excerpt_length + 1);
+
+        if(count($words) > $excerpt_length) {
+            array_pop($words);
+            $excerpt = implode(' ', $words) . '…';
+        }
+    }
+
+    return $excerpt;
 }

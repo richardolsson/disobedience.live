@@ -21,6 +21,11 @@
 
         $add_event_url = get_the_permalink($add_event_page);
     }
+
+    $activists = get_posts(array(
+        'post_type' => 'activist',
+        'fields' => 'ids',
+    ));
 ?>
 <?php get_header();?>
 <?php the_post();?>
@@ -32,6 +37,17 @@
     <div class="intro">
     </div>
     <div class="activists">
+        <h2>Four activists</h2>
+        <ul class="activist-list">
+        <?php foreach ($activists as $id): $url = get_the_permalink($id); ?>
+            <li class="activist-item">
+                <a href="<?php echo $url;?>"
+                    class="thumb-link"><?php echo get_the_post_thumbnail($id, 'activist-thumbnail');?></a>
+                <h3><a href="<?php echo $url;?>"><?php echo get_the_title($id);?></a></h3>
+                <p><?php echo get_excerpt_by_id($id);?></p>
+            </li>
+        <?php endforeach; ?>
+        </ul>
     </div>
     <div class="voices">
     </div>
