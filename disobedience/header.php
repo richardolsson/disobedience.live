@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title><?php the_title();?></title>
+        <title><?php wp_title();?></title>
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/main.css?v=170809">
         <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
         <link rel="icon" href="<?php echo get_template_directory_uri();?>/images/favicon.png">
