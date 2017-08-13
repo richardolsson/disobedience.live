@@ -1,125 +1,38 @@
 .home {
-    &:before, &:after {
-        background: none;
-        animation: none;
+    h2 {
+        font-family: $f-alt-gothic;
+        font-weight: normal;
+        font-size: 5em;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 1em;
     }
 
-    .page {
-        max-width: 1000px;
-        margin: 0 auto;
+    p {
+        margin: 1em 0 1.5em;
     }
 
-    .content {
-        max-width: none;
-    }
-
-    .teaser {
-        position: relative;
+    .events {
         text-align: center;
-        color: black;
 
-        @include animated-gradient-background(absolute);
-
-        .teaser-content {
-            position: relative;
-            padding: 2em 1em 2em;
-            z-index: 3;
+        #map {
+            height: 50vh;
+            min-height: 400px;
         }
 
-        .teaser-countdown {
-            .teaser-countdown-text {
-                font-size: 28px;
-                white-space: nowrap;
-            }
-        }
-
-        .teaser-cta {
-            margin-top: 2em;
-
-            a {
-                @include cta-button;
-            }
-        }
-
-        #player-container {
-            display: none;
-        }
-
-        &.playing {
-            .teaser-content, .teaser-countdown, .teaser-cta {
-                display: none;
-            }
-
-            #player-container {
-                position: relative;
-                display: block;
-                z-index: 4;
-            }
+        .cta {
+            @include cta-button-black;
+            margin-top: 1em;
         }
     }
 
     @include medium-screen {
-        .header {
-            margin: 2em 2%;
-        }
-
-        .teaser {
-            height: 45em;
-            font-size: 1em;
-
-            .teaser-content {
-                padding: 10em 10em 2em;
-            }
-
-            .teaser-countdown {
-                display: flex;
-                justify-content: center;
-
-                &:before {
-                    content: " ";
-                    background: url(images/logo.png) no-repeat top left;
-                    background-size: 300px;
-                    margin: 0;
-                    width: 45px;
-                    height: 50px;
-                }
-
-                .teaser-countdown-text {
-                    background: url(images/logo-line.png) repeat-x top left;
-                    background-size: 15px;
-                    padding: 5px 15px 0;
-                    font-size: 16px;
-                    height: 50px;
-
-                    animation: teaser-underscore-blink 1s steps(4, end) infinite;
-                }
-
-                &:after {
-                    content: " ";
-                    background: url(images/logo.png) no-repeat top right;
-                    background-size: 300px;
-                    width: 235px;
-                    height: 50px;
-                }
-            }
-
-            .teaser-text {
-                margin: 3em 0;
-            }
+        h2 {
+            font-size: 7em;
         }
     }
 
     @include large-screen {
-        .teaser {
-            .teaser-countdown {
-                transform: scale(1.2, 1.2);
-
-                .teaser-countdown-text {
-                    padding: 0 20px;
-                    font-size: 24px;
-                }
-            }
-        }
     }
 }
 

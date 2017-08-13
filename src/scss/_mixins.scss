@@ -96,11 +96,9 @@
     }
 }
 
-@mixin cta-button {
+@mixin cta-button-base {
     display: inline-block;
-    border: 2px solid rgba(255,255,255, 0.75);
     background-color: transparent;
-    color: white;
     padding: 0.5em 3em;
     text-decoration: none;
     text-transform: uppercase;
@@ -108,9 +106,25 @@
     cursor: pointer;
 
     transition: background-color 0.2s;
+}
+
+@mixin cta-button {
+    @include cta-button-base;
+    border: 2px solid rgba(255,255,255, 0.75);
+    color: white;
 
     &:hover {
         background-color: rgba(255,255,255, 0.2);
+    }
+}
+
+@mixin cta-button-black {
+    @include cta-button-base;
+    border: 2px solid rgba(0,0,0, 0.75);
+    color: black;
+
+    &:hover {
+        background-color: rgba(0,0,0, 0.2);
     }
 }
 

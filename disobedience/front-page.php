@@ -1,26 +1,74 @@
 <?php
-    $start_time = mktime(0, 0, 0, 8, 24, 2017);
-    $now = mktime();
-    $diff = $start_time - $now;
-    $days = $diff / 60 / 60 / 24;
+    $events = get_posts(array(
+        'post_type' => 'event',
+        'posts_per_page' => 1000,
+    ));
+
+    $add_event_url = null;
+    $add_event_pages = get_posts(array(
+        'post_type' => 'page',
+        'fields' => 'ids',
+        'nopaging' => true,
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'page-addevent.php'
+    ));
+
+    if (!empty($add_event_pages)) {
+        $add_event_page = $add_event_pages[0];
+        if (function_exists('pll_get_post')) {
+            $add_event_page = pll_get_post($add_event_page);
+        }
+
+        $add_event_url = get_the_permalink($add_event_page);
+    }
 ?>
 <?php get_header();?>
 <?php the_post();?>
 <div class="content">
-    <div class="teaser">
-        <div class="teaser-content">
-            <?php if ($diff > 0):?>
-            <div class="teaser-countdown" data-diff="<?php echo $diff; ?>">
-                <div class="teaser-countdown-text"><?php printf('%d %s remaining', $days, $days==1? 'day':'days') ?></div>
-            </div>
-            <?php endif;?>
-            <div class="teaser-text">
-                <?php the_content() ;?>
-            </div>
-            <div class="teaser-cta">
-                <a href="https://youtu.be/HrjkPm3kdTo"><?php echo __('Play trailer', 'disobedience');?></a>
-            </div>
+    <div class="hero">
+    </div>
+    <div class="message">
+    </div>
+    <div class="intro">
+    </div>
+    <div class="activists">
+    </div>
+    <div class="voices">
+    </div>
+    <div class="events">
+        <h2>Public screenings</h2>
+        <p>
+            There are public screenings happening all over the place.<br>
+            Find one close to your or organize your own.
+        </p>
+        <div id="map">
         </div>
+
+        <a href="/events" class="cta">View list of events</a>
+        <a href="<?php echo $add_event_url;?>" class="cta">Add a screening event</a>
     </div>
 </div>
+<script>
+    var events = [
+    <?php
+        foreach ($events as $event):
+            $id = $event->ID;
+            if ($loc = get_field('location', $id)):
+    ?>
+        {
+            link: '<?php echo get_the_permalink($id);?>',
+            title: '<?php echo get_the_title($id);?>',
+            lat: <?php echo $loc['lat'];?>,
+            lng: <?php echo $loc['lng'];?>,
+        },
+    <?php endif;?>
+    <?php endforeach;?>
+    ];
+
+    function initMap() {
+        var icons = ['<?php echo get_template_directory_uri();?>/images/marker-green.png'];
+        initEventMap(document.getElementById('map'), events, icons);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNTh_Ay85-bSJ5WO1v-Sknl7R_IEBMVx4&callback=initMap" async defer></script>
 <?php get_footer();?>
