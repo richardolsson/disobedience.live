@@ -24,7 +24,9 @@ shuffle($voices);
             setup_postdata($voice);
         ?>
         <div class="voice">
-            <?php the_post_thumbnail('voice-thumbnail');?>
+            <a class="thumbnail" href="<?php echo get_field('youtube_url');?>">
+                <?php the_post_thumbnail('voice-thumbnail');?>
+            </a>
             <h2><?php the_title();?></h2>
             <?php if (have_rows('facts')):?>
             <ul class="fact-list">

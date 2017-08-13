@@ -79,8 +79,9 @@ function disobedience_register_post_types() {
 }
 
 function disobedience_register_fields() {
-    require('fields/facts.php');
     require('fields/event.php');
+    require('fields/facts.php');
+    require('fields/video.php');
     require('fields/options/misc.php');
 }
 

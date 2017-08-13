@@ -16,6 +16,35 @@
         }
     }
 
+    .thumbnail {
+        display: block;
+        position: relative;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 6em;
+            height: 6em;
+            background-color: red;
+            margin-left: -3em;
+            margin-top: -3em;
+            background: transparent url(images/play.png) no-repeat;
+            background-size: 100% 100%;
+            opacity: 0.7;
+
+            transition: opacity 0.5s;
+        }
+
+        &:hover {
+            &:before {
+                transition: opacity 0.2s;
+                opacity: 1.0;
+            }
+        }
+    }
+
     @include medium-screen {
         .intro {
             width: 40%;
