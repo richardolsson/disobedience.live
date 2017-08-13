@@ -1,3 +1,5 @@
+<?php get_header();?>
+<?php the_post();?>
 <?php
     $events = get_posts(array(
         'post_type' => 'event',
@@ -31,15 +33,19 @@
         'post_type' => 'voice',
         'fields' => 'ids',
     ));
+
+    $intro = apply_filters('the_content', get_the_content());
 ?>
-<?php get_header();?>
-<?php the_post();?>
 <div class="content">
     <div class="hero">
     </div>
     <div class="message">
     </div>
     <div class="intro">
+        <h1 style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"><?php the_title();?></h1>
+        <div class="post-content page-content">
+            <?php echo $intro; ?>
+        </div>
     </div>
     <div class="activists">
         <h2>Four activists</h2>

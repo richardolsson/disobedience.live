@@ -1,6 +1,7 @@
 .home {
-    div {
+    .content > div {
         text-align: center;
+        margin: 4em 0;
     }
 
     h2 {
@@ -14,6 +15,21 @@
 
     p {
         margin: 1em 0 1.5em;
+    }
+
+    .intro {
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 3.6em;
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            padding: 2em;
+            margin: 0 1em 1em;
+            color: white;
+            background-position: center center;
+            background-size: cover;
+        }
     }
 
     .activists {
