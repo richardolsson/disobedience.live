@@ -1,0 +1,36 @@
+.single-activist .content {
+    h1 {
+        font-size: 8em;
+        font-family: $f-alt-gothic;
+        text-transform: uppercase;
+        line-height: 1em;
+    }
+
+    .facts {
+        font-size: 1.5em;
+    }
+
+    @include medium-screen {
+        @include clear-after;
+
+        h1 {
+            margin: 0 0 0.5em;
+        }
+
+        .meta {
+            float: left;
+            width: 30%;
+            margin: 3em 0 0;
+        }
+
+        .post-content {
+            float: right;
+            width: 60%;
+            margin: 3em 0 0;
+
+            p:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+}

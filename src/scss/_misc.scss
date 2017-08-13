@@ -1,0 +1,24 @@
+.fact-list {
+    @include list-reset;
+    font-size: inherit;
+
+    li {
+        font-size: inherit;
+    }
+
+    .label {
+        &:after {
+            content: ": ";
+        }
+    }
+}
+
+.share {
+    input {
+        display: block;
+        margin: 0.5em 0;
+        text-align: center;
+        border: 2px solid black;
+        background-color: transparent;
+    }
+}
