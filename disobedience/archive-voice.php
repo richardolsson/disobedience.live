@@ -12,7 +12,7 @@ shuffle($voices);
 <?php get_header(); ?>
 <div class="content">
     <p class="intro">
-        Short intro to other voices. Facidesti conet explatquo te nimintiis sant volo officia volupta.
+        <?php disobedience_pstr('voices_archive_intro');?>
     </p>
     <div class="voices">
 <?php

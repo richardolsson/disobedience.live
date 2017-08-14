@@ -7,6 +7,7 @@ function disobedience_init() {
     disobedience_register_nav_menus();
     disobedience_register_post_types();
     disobedience_register_thumbnails();
+    disobedience_register_strings();
     disobedience_register_fields();
     disobedience_config_admin();
 }
@@ -109,6 +110,70 @@ function disobedience_config_admin() {
         'parent' => 'disobedience'
     ));
     endif;
+}
+
+function disobedience_register_strings() {
+    if (function_exists('pll_register_string')) {
+        // Home page strings
+        pll_register_string('disobedience', 'home_activists_header', 'home');
+        pll_register_string('disobedience', 'home_voices_header', 'home');
+        pll_register_string('disobedience', 'home_voices_intro', 'home');
+        pll_register_string('disobedience', 'home_voices_button', 'home');
+        pll_register_string('disobedience', 'home_events_header', 'home');
+        pll_register_string('disobedience', 'home_events_intro', 'home', true);
+        pll_register_string('disobedience', 'home_events_list_button', 'home');
+        pll_register_string('disobedience', 'home_events_add_button', 'home');
+
+        // Voices page strings
+        pll_register_string('disobedience', 'voices_archive_intro', 'voices', true);
+
+        // Activist page strings
+        pll_register_string('disobedience', 'activists_single_share', 'activists', true);
+
+        // Events page strings
+        pll_register_string('disobedience', 'events_archive_table_city', 'events');
+        pll_register_string('disobedience', 'events_archive_table_date', 'events');
+        pll_register_string('disobedience', 'events_archive_table_time', 'events');
+        pll_register_string('disobedience', 'events_archive_table_title', 'events');
+        pll_register_string('disobedience', 'events_single_share', 'events');
+
+        // Event form string
+        pll_register_string('disobedience', 'events_form_title', 'events');
+        pll_register_string('disobedience', 'events_form_organizer', 'events');
+        pll_register_string('disobedience', 'events_form_startdate', 'events');
+        pll_register_string('disobedience', 'events_form_starttime', 'events');
+        pll_register_string('disobedience', 'events_form_enddate', 'events');
+        pll_register_string('disobedience', 'events_form_endtime', 'events');
+        pll_register_string('disobedience', 'events_form_city', 'events');
+        pll_register_string('disobedience', 'events_form_country', 'events');
+        pll_register_string('disobedience', 'events_form_info', 'events');
+        pll_register_string('disobedience', 'events_form_contact', 'events');
+        pll_register_string('disobedience', 'events_form_email', 'events');
+        pll_register_string('disobedience', 'events_form_phone', 'events');
+        pll_register_string('disobedience', 'events_form_link', 'events');
+        pll_register_string('disobedience', 'events_form_image', 'events');
+        pll_register_string('disobedience', 'events_form_image_caption', 'events');
+        pll_register_string('disobedience', 'events_form_open', 'events');
+        pll_register_string('disobedience', 'events_form_open_yes', 'events');
+        pll_register_string('disobedience', 'events_form_open_no', 'events');
+        pll_register_string('disobedience', 'events_form_closed', 'events');
+        pll_register_string('disobedience', 'events_form_terms', 'events');
+        pll_register_string('disobedience', 'events_form_terms_link', 'events');
+        pll_register_string('disobedience', 'events_form_submit', 'events');
+    }
+}
+
+function disobedience_str($id) {
+    if (function_exists('pll__')) {
+        return pll__($id);
+    }
+    else {
+        return $id;
+    }
+}
+
+function disobedience_pstr($id) {
+    echo disobedience_str($id);
 }
 
 add_filter('acf/fields/google_map/api', 'disobedience_acf_google_map_api');

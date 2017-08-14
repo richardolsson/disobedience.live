@@ -18,7 +18,7 @@
                 <?php the_field('organizer');?>
             </p>
             <p class="share">
-                Share this event:
+                <?php disobedience_pstr('events_single_share');?>
                 <input class="share" type="text" value="<?php the_permalink();?>">
             </p>
         </div>

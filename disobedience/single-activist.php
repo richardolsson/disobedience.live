@@ -21,7 +21,7 @@
         <?php endif;?>
         <div class="sharing">
             <p class="share">
-                Share this activist bio:
+                <?php disobedience_pstr('activist_single_share');?>
                 <input class="share" type="text" value="<?php the_permalink();?>">
             </p>
         </div>

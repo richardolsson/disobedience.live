@@ -8,10 +8,10 @@
     <table class="events-table">
         <thead>
             <tr>
-                <th>City</th>
-                <th>Date</th>
-                <th>Start time</th>
-                <th>Event title and organizers</th>
+                <th><?php disobedience_pstr('events_archive_table_city');?></th>
+                <th><?php disobedience_pstr('events_archive_table_date');?></th>
+                <th><?php disobedience_pstr('events_archive_table_time');?></th>
+                <th><?php disobedience_pstr('events_archive_table_title');?></th>
             </tr>
         </thead>
         <tbody>

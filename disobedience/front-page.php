@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="activists">
-        <h2>Four activists</h2>
+        <h2><?php disobedience_pstr('home_activists_header');?></h2>
         <ul class="activist-list">
         <?php foreach ($activists as $id): $url = get_the_permalink($id); ?>
             <li class="activist-item">
@@ -65,10 +65,10 @@
         </ul>
     </div>
     <div class="voices">
-        <h2>Other voices</h2>
+        <h2><?php disobedience_pstr('home_voices_header');?></h2>
         <div class="gradient"></div>
         <p>
-            Hear the thoughts of people affected by the action:
+            <?php disobedience_pstr('home_voices_intro');?>
         </p>
         <p>
         <?php foreach ($voices as $id): $url = get_the_permalink($id); ?>
@@ -76,20 +76,19 @@
         <?php endforeach; ?>
         </p>
         <p class="cta">
-            <a href="<?php echo get_post_type_archive_link('voice');?>">Hear their voices</a>
+            <a href="<?php echo get_post_type_archive_link('voice');?>"><?php disobedience_pstr('home_voices_button');?></a>
         </p>
     </div>
     <div class="events">
-        <h2>Public screenings</h2>
+        <h2><?php disobedience_pstr('home_events_header');?></h2>
         <p>
-            There are public screenings happening all over the place.<br>
-            Find one close to your or organize your own.
+            <?php disobedience_pstr('home_events_intro');?>
         </p>
         <div id="map">
         </div>
 
-        <a href="/events" class="cta">View list of events</a>
-        <a href="<?php echo $add_event_url;?>" class="cta">Add a screening event</a>
+        <a href="/events" class="cta"><?php disobedience_pstr('home_events_list_button');?></a>
+        <a href="<?php echo $add_event_url;?>" class="cta"><?php disobedience_pstr('home_events_add_button');?></a>
     </div>
 </div>
 <script>

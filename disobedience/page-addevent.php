@@ -72,91 +72,88 @@ get_header();
 
             <ul class="form-items">
                 <li class="text-item event-form-title">
-                    <label for="event-form-title">Event Title</label>
+                    <label for="event-form-title"><?php disobedience_pstr('events_form_title');?></label>
                     <input id="event-form-title" type="text" name="title">
                 </li>
                 <li class="text-item event-form-organizer">
-                    <label for="event-form-organizer">Event Organizer (e.g. organization)</label>
+                    <label for="event-form-organizer"><?php disobedience_pstr('events_form_organizer');?></label>
                     <input id="event-form-organizer" type="text" name="organizer">
                 </li>
                 <li class="text-item event-form-date">
-                    <label for="event-form-start-date">Start date</label>
+                    <label for="event-form-start-date"><?php disobedience_pstr('events_form_startdate');?></label>
                     <input id="event-form-start-date" type="date" name="start_date">
                 </li>
                 <li class="text-item event-form-time">
-                    <label for="event-form-start-time">Start time</label>
+                    <label for="event-form-start-time"><?php disobedience_pstr('events_form_starttime');?></label>
                     <input id="event-form-start-time" type="time" name="start_time">
                 </li>
                 <li class="text-item event-form-date">
-                    <label for="event-form-end-date">End date</label>
+                    <label for="event-form-end-date"><?php disobedience_pstr('events_form_enddate');?></label>
                     <input id="event-form-end-date" type="date" name="end_date">
                 </li>
                 <li class="text-item event-form-time">
-                    <label for="event-form-end-time">End time</label>
+                    <label for="event-form-end-time"><?php disobedience_pstr('events_form_endtime');?></label>
                     <input id="event-form-end-time" type="time" name="end_time">
                 </li>
                 <li class="text-item event-form-city">
-                    <label for="event-form-city">City</label>
+                    <label for="event-form-city"><?php disobedience_pstr('events_form_city');?></label>
                     <input id="event-form-city" type="text" name="city">
                 </li>
                 <li class="text-item event-form-country">
-                    <label for="event-form-country">Country</label>
+                    <label for="event-form-country"><?php disobedience_pstr('events_form_country');?></label>
                     <input id="event-form-country" type="text" name="country">
                 </li>
                 <li class="textarea-item event-form-info">
-                    <label for="event-form-info">Event information</label>
+                    <label for="event-form-info"><?php disobedience_pstr('events_form_info');?></label>
                     <textarea id="event-form-info" name="info"></textarea>
                 </li>
                 <li class="text-item event-form-contact">
-                    <label for="event-form-contact">Name of contact person</label>
+                    <label for="event-form-contact"><?php disobedience_pstr('events_form_contact');?></label>
                     <input id="event-form-contact" type="text" name="contact">
                 </li>
                 <li class="text-item event-form-email">
-                    <label for="event-form-email">Contact email</label>
+                    <label for="event-form-email"><?php disobedience_pstr('events_form_email');?></label>
                     <input id="event-form-email" type="email" name="email">
                 </li>
                 <li class="text-item event-form-phone">
-                    <label for="event-form-phone">Contact phone</label>
+                    <label for="event-form-phone"><?php disobedience_pstr('events_form_phone');?></label>
                     <input id="event-form-phone" type="text" name="phone">
                 </li>
                 <li class="text-item event-form-link">
-                    <label for="event-form-link">Link (e.g. Facebook event)</label>
+                    <label for="event-form-link"><?php disobedience_pstr('events_form_link');?></label>
                     <input id="event-form-link" type="text" name="link">
                 </li>
                 <li class="file-item event-form-image">
-                    <span>Upload event photo here</span>
+                    <span><?php disobedience_pstr('events_form_image');?></span>
                     <div class="upload-warning">
-                        Uploading the image may take some time. After submitting the form,
-                        don't leave the page until it's done.
+                        <?php disobedience_pstr('events_form_image_caption');?>
                     </div>
                     <input id="event-form-image" type="file" name="image">
                 </li>
                 <li class="event-form-open">
-                    The screening is:
+                    <?php disobedience_pstr('events_form_open');?>
                     <ul class="radio-options">
                         <li class="radio-option">
                             <input id="event-form-open-yes" type="radio" name="open" value="yes" checked="checked">
-                            <label for="event-form-open-yes">Public/open to anyone</label>
+                            <label for="event-form-open-yes"><?php disobedience_pstr('events_form_open_yes');?></label>
                         </li>
                         <li class="radio-option">
                             <input id="event-form-open-no" type="radio" name="open" value="no">
-                            <label for="event-form-open-no">For invited groups or guests only</label>
+                            <label for="event-form-open-no"><?php disobedience_pstr('events_form_open_no');?></label>
                             <p class="small-print">
-                                Your event will still be visible on the website, but it will be described as "not public"
-                                and you can choose to not specify the street address (for example: screenings at home or
-                                screenings in classrooms).
+                                <?php disobedience_pstr('events_form_closed');?>
                             </p>
                         </li>
                     </ul>
                 </li>
             </ul>
             <p>
-                By submitting this form you assert that you have read and understood the basic values.
+                <?php disobedience_pstr('events_form_terms');?>
                 <?php if ($terms_page): ?>
-                <a href="<?php echo $terms_page_url;?>">Read the basic values</a>
+                <a href="<?php echo $terms_page_url;?>"><?php disobedience_pstr('events_form_terms_link');?></a>
                 <?php endif; ?>
             </p>
-            <input class="submit-button" type="submit" value="Add event to calendar">
+            <input class="submit-button" type="submit" value="<?php disobedience_pstr('events_form_submit');?>">
         </form>
     </div>
 </div>
