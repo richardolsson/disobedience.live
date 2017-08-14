@@ -35,11 +35,15 @@
     ));
 
     $intro = apply_filters('the_content', get_the_content());
+
+    $hero_img = get_field('home_hero_image', 'option');
 ?>
 <div class="content">
     <div class="hero">
+        <img src="<?php echo $hero_img['url'];?>">
     </div>
     <div class="message">
+        <div class="message-text"><?php echo get_field('home_message', 'option');?></div>
     </div>
     <div class="intro">
         <h1 style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"><?php the_title();?></h1>

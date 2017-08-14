@@ -83,6 +83,7 @@ function disobedience_register_fields() {
     require('fields/facts.php');
     require('fields/video.php');
     require('fields/options/misc.php');
+    require('fields/options/home.php');
 }
 
 function disobedience_config_admin() {
@@ -94,6 +95,12 @@ function disobedience_config_admin() {
         'capability' => 'edit_posts',
         'position' => 5,
         'redirect' => true,
+    ));
+
+    acf_add_options_sub_page(array(
+        'title' => __('Home settings', 'disobedience'),
+        'menu_slug' => 'home',
+        'parent' => 'disobedience'
     ));
 
     acf_add_options_sub_page(array(

@@ -160,13 +160,43 @@
                 }
             }
         }
-    }
 
-    @include large-screen {
+        .message {
+            display: flex;
+            justify-content: center;
+
+            &:before {
+                content: " ";
+                background: url(images/logo.png) no-repeat top left;
+                background-size: 600px;
+                margin: 0;
+                width: 90px;
+                height: 100px;
+            }
+
+            .message-text {
+                background: url(images/logo-line.png) repeat-x top left;
+                background-size: 30px;
+                padding: 5px 15px 0;
+                max-width: 24em;
+                font-size: 14px;
+                height: 100px;
+
+                animation: message-underscore-blink 1s steps(4, end) infinite;
+            }
+
+            &:after {
+                content: " ";
+                background: url(images/logo.png) no-repeat top right;
+                background-size: 600px;
+                width: 470px;
+                height: 100px;
+            }
+        }
     }
 }
 
-@keyframes teaser-underscore-blink {
+@keyframes message-underscore-blink {
     0% { background-position: top left };
     70% { background-position: top left };
     100% { background-position: 0 100px };
