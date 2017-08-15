@@ -3,7 +3,7 @@
 <?php
     $facts = get_field('facts');
     $video_url = get_field('video_youtube_url');
-    if (strpos($video_url, 'youtu.be') !== false) {
+    if (strpos($video_url, '//youtu.be') !== false) {
         $fields = explode('/', $video_url);
         $video_id = $fields[count($fields) - 1];
     }
