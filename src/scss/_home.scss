@@ -23,6 +23,22 @@
         margin: 1em 0 1.5em;
     }
 
+    .countdown {
+        @include animated-gradient-background(absolute);
+
+        position: relative;
+        padding: 12em 0;
+        margin: 0 auto;
+        max-width: 80em;
+        z-index: 0;
+
+        h1 {
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+    }
+
     .intro {
         max-width: 80em;
 

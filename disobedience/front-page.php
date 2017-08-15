@@ -1,3 +1,9 @@
+<?php
+    $start_time = mktime(0, 0, 0, 8, 22, 2017);
+    $now = mktime();
+    $diff = $start_time - $now;
+    $days = $diff / 60 / 60 / 24;
+?>
 <?php get_header();?>
 <?php the_post();?>
 <?php
@@ -37,14 +43,23 @@
     $intro = apply_filters('the_content', get_the_content());
 
     $hero_img = get_field('home_hero_image', 'option');
+    $home_msg = get_field('home_message', 'option');
 ?>
 <div class="content">
+    <?php if (!empty($hero_img)):?>
     <div class="hero">
         <img src="<?php echo $hero_img['url'];?>">
     </div>
-    <div class="message">
-        <div class="message-text"><?php echo get_field('home_message', 'option');?></div>
+    <?php else: ?>
+    <div class="countdown">
+        <h1><?php printf('%d %s remaining', $days, $days==1? 'day':'days') ?></h1>
     </div>
+    <?php endif;?>
+    <?php if (!empty($home_msg)):?>
+    <div class="message">
+        <div class="message-text"><?php echo $home_msg;?></div>
+    </div>
+    <?php endif;?>
     <div class="intro">
         <h1 style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"><?php the_title();?></h1>
         <div class="post-content page-content">
