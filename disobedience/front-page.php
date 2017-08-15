@@ -61,7 +61,8 @@
     </div>
     <?php endif;?>
     <div class="intro">
-        <h1 style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"><?php the_title();?></h1>
+        <h1 class="flash"
+            style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"><?php the_title();?></h1>
         <div class="post-content page-content">
             <?php echo $intro; ?>
         </div>
@@ -73,7 +74,7 @@
         <?php foreach ($activists as $id): $url = get_the_permalink($id); ?>
             <li class="activist-item">
                 <a href="<?php echo $url;?>"
-                    class="thumb-link"><?php echo get_the_post_thumbnail($id, 'activist-thumbnail');?></a>
+                    class="thumb-link flash"><?php echo get_the_post_thumbnail($id, 'activist-thumbnail');?></a>
                 <h3><a href="<?php echo $url;?>"><?php echo get_the_title($id);?></a></h3>
                 <p><?php echo get_excerpt_by_id($id);?></p>
             </li>
@@ -103,7 +104,8 @@
         <p>
             <?php disobedience_pstr('home_events_intro');?>
         </p>
-        <div id="map">
+        <div class="map-container flash">
+            <div id="map"></div>
         </div>
 
         <a href="/events" class="cta"><?php disobedience_pstr('home_events_list_button');?></a>

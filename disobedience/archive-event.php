@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="events-map">
+<div class="events-map flash">
     <div id="map"></div>
 </div>
 <div class="content">

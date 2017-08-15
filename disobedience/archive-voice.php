@@ -24,7 +24,7 @@ shuffle($voices);
             setup_postdata($voice);
         ?>
         <div class="voice">
-            <a class="thumbnail" href="<?php echo get_field('youtube_url');?>">
+            <a class="thumbnail flash" href="<?php echo get_field('youtube_url');?>">
                 <?php the_post_thumbnail('voice-thumbnail');?>
             </a>
             <h2><?php the_title();?></h2>

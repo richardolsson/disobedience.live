@@ -14,7 +14,9 @@
     }
 ?>
 <div class="content">
-    <?php the_post_thumbnail();?>
+    <div class="thumbnail flash">
+        <?php the_post_thumbnail();?>
+    </div>
     <div class="text-content">
         <div class="meta">
             <h1><?php the_title();?></h1>
@@ -42,7 +44,7 @@
         </div>
     </div>
     <?php if (!empty($video_id)):?>
-    <div class="video">
+    <div class="video flash">
         <iframe
             width="560" height="315"
             src="https://www.youtube.com/embed/<?php echo $video_id; ?>"
