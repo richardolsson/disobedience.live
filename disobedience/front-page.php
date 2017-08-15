@@ -51,6 +51,7 @@
             <?php echo $intro; ?>
         </div>
     </div>
+    <?php if (!empty($activists)):?>
     <div class="activists">
         <h2><?php disobedience_pstr('home_activists_header');?></h2>
         <ul class="activist-list">
@@ -64,6 +65,7 @@
         <?php endforeach; ?>
         </ul>
     </div>
+    <?php endif;?>
     <?php if (!empty($voices)):?>
     <div class="voices">
         <h2><?php disobedience_pstr('home_voices_header');?></h2>
