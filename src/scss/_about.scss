@@ -22,10 +22,13 @@
         }
 
         h2 {
+            font-family: $f-alt-gothic;
+            font-weight: normal;
+            text-transform: uppercase;
+            margin: 0;
             position: absolute;
             right: 5%;
-            top: 30%;
-            font-size: 3em;
+            font-size: 8em;
         }
     }
 
