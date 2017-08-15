@@ -34,6 +34,13 @@ acf_add_local_field_group(array (
                 'value' => 'voice',
             ),
         ),
+        array(
+            array(
+                'param' => 'post_type',
+                'operator' => '==',
+                'value' => 'activist',
+            ),
+        ),
     ),
     'menu_order' => 0,
     'position' => 'normal',
