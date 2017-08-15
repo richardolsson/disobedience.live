@@ -228,7 +228,7 @@ img {
 .home .countdown {
   overflow-x: hidden;
   position: relative;
-  padding: 12em 0;
+  padding: 18em 0;
   margin: 0 auto;
   max-width: 80em;
   z-index: 0; }
@@ -485,10 +485,13 @@ img {
       bottom: 0;
       right: 0; }
   .about-page .countdown h2 {
+    font-family: "alternate-gothic-no-1-d", sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0;
     position: absolute;
     right: 5%;
-    top: 30%;
-    font-size: 3em; }
+    font-size: 8em; }
 
 .about-page img.alignright {
   width: 100%; }
@@ -523,11 +526,12 @@ img {
 .single-activist .content h1 {
   font-size: 8em;
   font-family: "alternate-gothic-no-1-d", sans-serif;
+  font-weight: normal;
   text-transform: uppercase;
   line-height: 1em; }
 
 .single-activist .content .facts {
-  font-size: 1.5em; }
+  font-size: 1.3em; }
 
 .single-activist .content .video {
   position: relative;
