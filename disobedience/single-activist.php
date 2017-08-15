@@ -32,7 +32,7 @@
             <?php endif;?>
             <div class="sharing">
                 <p class="share">
-                    <?php disobedience_pstr('activist_single_share');?>
+                    <?php disobedience_pstr('activists_single_share');?>
                     <input class="share" type="text" value="<?php the_permalink();?>">
                 </p>
             </div>
