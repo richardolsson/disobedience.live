@@ -64,6 +64,7 @@
         <?php endforeach; ?>
         </ul>
     </div>
+    <?php if (!empty($voices)):?>
     <div class="voices">
         <h2><?php disobedience_pstr('home_voices_header');?></h2>
         <div class="gradient"></div>
@@ -79,6 +80,7 @@
             <a href="<?php echo get_post_type_archive_link('voice');?>"><?php disobedience_pstr('home_voices_button');?></a>
         </p>
     </div>
+    <?php endif;?>
     <div class="events">
         <h2><?php disobedience_pstr('home_events_header');?></h2>
         <p>
