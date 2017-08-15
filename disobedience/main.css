@@ -225,6 +225,41 @@ img {
 .home p {
   margin: 1em 0 1.5em; }
 
+.home .countdown {
+  overflow-x: hidden;
+  position: relative;
+  padding: 12em 0;
+  margin: 0 auto;
+  max-width: 80em;
+  z-index: 0; }
+  .home .countdown:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4000px;
+    background: linear-gradient(90deg, #cdd7e0 0%, #ff6524 7%, #ff4334 14%, #ff5000 20%, #b21f81 35%, #cdd7e0 40%, #ff5000 47%, #ff2c65 54%, white 59%, #0d156c 61%, #cdd7e0 65%, #ff6524 72%, #ff4334 79%, #ff5000 85%, #b21f81 100%);
+    animation: moving-gradient 60s linear infinite, scale-gradient 10s infinite; }
+  .home .countdown:after {
+    content: "";
+    display: block;
+    background: url(images/noise.gif);
+    background-size: 500px 500px;
+    position: absolute;
+    opacity: 0.10;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+  .home .countdown h1 {
+    position: relative;
+    z-index: 1;
+    color: white; }
+
 .home .intro {
   max-width: 80em; }
   .home .intro h1 {
