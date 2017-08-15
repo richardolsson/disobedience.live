@@ -22,3 +22,68 @@
         background-color: transparent;
     }
 }
+
+.flash {
+    &.flashing {
+        position: relative;
+        display: block;
+    }
+
+    .overlay {
+        position: absolute;
+        overflow: hidden;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+
+        z-index: 9999;
+
+        .gradient {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 8000px;
+
+            background: linear-gradient(
+                90deg,
+                $c-grad00 0%,
+                $c-grad01 7%,
+                $c-grad02 14%,
+                $c-grad03 20%,
+                $c-grad05 35%,
+                $c-grad06 40%,
+                $c-grad07 47%,
+                $c-grad08 54%,
+                $c-grad09 59%,
+                $c-grad10 61%,
+                $c-grad00 65%,
+                $c-grad01 72%,
+                $c-grad02 79%,
+                $c-grad03 85%,
+                $c-grad05 95%,
+                $c-grad00 100%
+            );
+
+            background-size: 4000px;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            background: url(images/noise.gif);
+            background-size: 500px 500px;
+            position: absolute;
+            opacity: 0.10;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

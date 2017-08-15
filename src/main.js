@@ -44,6 +44,40 @@ $(document).ready(function() {
 
         return false;
     });
+
+    $('.flash').each(function() {
+        var elem = $(this);
+        var overlay = $(document.createElement('div'));
+        var grad = $(document.createElement('grad'));
+
+        overlay.addClass('overlay');
+        grad.addClass('gradient');
+        elem.addClass('flashing');
+        elem.append(overlay);
+        overlay.append(grad);
+
+        var flashCount = 5 + Math.ceil(Math.random() * 5);
+
+        var nextFlash = function() {
+            flashCount--;
+
+            if (flashCount > 0) {
+                var nextDelay = 60 + Math.random() * 200;
+                var gradOffset = Math.round(Math.random() * 4000);
+
+                overlay.toggle();
+                grad.css({ 'left': - gradOffset + 'px' });
+
+                setTimeout(nextFlash, nextDelay);
+            }
+            else {
+                overlay.remove();
+                elem.removeClass('flashing');
+            }
+        }
+
+        nextFlash();
+    });
 });
 
 function initMarker(ev, map, bounds, icons) {
@@ -73,7 +107,6 @@ function initMarker(ev, map, bounds, icons) {
 
 window.initEventMap = function(domElement, events, icons) {
     // Create a map object and specify the DOM element for display.
-    console.log(events);
     var map = new google.maps.Map(domElement, {
         center: {lat: -34.397, lng: 150.644},
         scrollwheel: false,
