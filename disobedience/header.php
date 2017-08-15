@@ -2,7 +2,7 @@
 <html>
     <head>
         <title><?php wp_title();?></title>
-        <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/main.css?v=170809">
+        <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/main.css?v=170815">
         <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
         <link rel="icon" href="<?php echo get_template_directory_uri();?>/images/favicon.png">
         <script src="https://use.typekit.net/rdb8ojx.js"></script>
@@ -12,7 +12,7 @@
             src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
             crossorigin="anonymous"></script>
-        <script src="<?php echo get_template_directory_uri();?>/main.js?v=170809"></script>
+        <script src="<?php echo get_template_directory_uri();?>/main.js?v=170815"></script>
     </head>
     <body <?php body_class();?>>
         <div class="lang-switch">
