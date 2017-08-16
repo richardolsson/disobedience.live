@@ -490,7 +490,8 @@ img {
     text-transform: uppercase;
     margin: 0;
     position: absolute;
-    right: 5%;
+    top: 10%;
+    left: 20%;
     font-size: 8em; }
 
 .about-page img.alignright {
