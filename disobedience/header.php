@@ -21,7 +21,7 @@
         </div>
         <div class="page">
             <div class="header">
-                <a class="logo" href="/">DIS_OBEDIENCE.LIVE</a>
+                <a class="logo" href="/">DIS<span>_</span>OBEDIENCE.LIVE</a>
                 <div class="menu">
                     <?php wp_nav_menu(array('theme_location' => 'header-menu'));?>
                 </div>

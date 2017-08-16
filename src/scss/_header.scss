@@ -55,6 +55,12 @@
         font-family: $f-alt-gothic;
         font-size: 2em;
         text-decoration: none;
+
+        span {
+            display: inline-block;
+            margin: 0 -0.1em;
+            transform: scale(0.65, 1.0);
+        }
     }
 
     ul.menu {
