@@ -1,7 +1,8 @@
 <!doctype html>
 <html>
     <head>
-        <title><?php wp_title();?></title>
+        <?php wp_head();?>
+        <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/main.css?v=1708151611">
         <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
         <link rel="icon" href="<?php echo get_template_directory_uri();?>/images/favicon.png">
