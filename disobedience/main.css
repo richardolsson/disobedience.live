@@ -97,6 +97,10 @@ img {
     font-family: "alternate-gothic-no-1-d", sans-serif;
     font-size: 2em;
     text-decoration: none; }
+    .header .logo span {
+      display: inline-block;
+      margin: 0 -0.1em;
+      transform: scale(0.65, 1); }
   .header ul.menu {
     padding: 0;
     margin: 0;
@@ -402,7 +406,7 @@ img {
 
 @media (min-width: 719px) {
   .home h2 {
-    font-size: 7em; }
+    font-size: 8.8em; }
   .home .activists .activist-list .activist-item {
     width: 23%; }
     .home .activists .activist-list .activist-item:nth-child-of-type(2n + 0) {
