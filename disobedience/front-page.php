@@ -30,6 +30,24 @@
         $add_event_url = get_the_permalink($add_event_page);
     }
 
+    $about_url = null;
+    $about_pages = get_posts(array(
+        'post_type' => 'page',
+        'fields' => 'ids',
+        'nopaging' => true,
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'page-about.php'
+    ));
+
+    if (!empty($about_pages)) {
+        $about_page = $about_pages[0];
+        if (function_exists('pll_get_post')) {
+            $about_page = pll_get_post($about_page);
+        }
+
+        $about_url = get_the_permalink($about_page);
+    }
+
     $activists = get_posts(array(
         'post_type' => 'activist',
         'fields' => 'ids',
@@ -94,6 +112,9 @@
         <div class="post-content page-content">
             <?php echo $intro; ?>
         </div>
+        <?php if (!empty($about_url)):?>
+        <a class="cta" href="<?php echo $about_url;?>"><?php disobedience_pstr('home_intro_read_more');?></a>
+        <?php endif;?>
     </div>
     <?php if (!empty($activists)):?>
     <div class="activists">

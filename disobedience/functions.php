@@ -115,6 +115,7 @@ function disobedience_config_admin() {
 function disobedience_register_strings() {
     if (function_exists('pll_register_string')) {
         // Home page strings
+        pll_register_string('disobedience', 'home_intro_read_more', 'home');
         pll_register_string('disobedience', 'home_activists_header', 'home');
         pll_register_string('disobedience', 'home_voices_header', 'home');
         pll_register_string('disobedience', 'home_voices_intro', 'home');

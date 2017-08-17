@@ -72,6 +72,10 @@
             background-position: center center;
             background-size: cover;
         }
+
+        .cta {
+            @include cta-button-black;
+        }
     }
 
     .activists {
