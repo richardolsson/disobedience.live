@@ -44,9 +44,35 @@
 
     $hero_img = get_field('home_hero_image', 'option');
     $home_msg = get_field('home_message', 'option');
+
+    $stream_uri = get_field('home_stream_uri', 'option');
+    $stream_live = get_field('home_stream_live', 'option');
 ?>
 <div class="content">
-    <?php if (!empty($hero_img)):?>
+    <?php if (!empty($stream_uri) && !empty($stream_live)):?>
+    <div class="stream">
+        <div id="stream-player"></div>
+    </div>
+    <script>
+        (function() {
+            var elem = document.getElementById('stream-player');
+            var uri = '<?php echo $stream_uri; ?>';
+            var player = BambuserPlayer.create(elem, uri, {
+            });
+
+            player.play();
+
+            // Make the video play/pause when the user clicks on the container div.
+            elem.addEventListener('click', function() {
+                return player.paused ? player.play() : player.pause();
+            });
+
+            if (navigator.userAgent.match(/iPad|iPhone|iPod/) && !window.MSStream) {
+                player.controls = true;
+            }
+        })();
+    </script>
+    <?php elseif (!empty($hero_img)):?>
     <div class="hero">
         <img src="<?php echo $hero_img['url'];?>">
     </div>
