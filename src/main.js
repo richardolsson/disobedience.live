@@ -122,4 +122,22 @@ window.initEventMap = function(domElement, events, icons) {
     }
 
     map.fitBounds(bounds);
-}
+};
+
+window.initHomeMsgPolling = function(domElement, url) {
+    var poll = function() {
+        var data = {
+            'action': 'get_home_msg',
+        };
+
+        $.post(url, data).done(function(res) {
+            if (res && res.success) {
+                $(domElement).text(res.data.message);
+            }
+        });
+    };
+
+    setInterval(poll, 15000);
+
+    poll();
+};

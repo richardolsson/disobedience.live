@@ -84,7 +84,7 @@
     <?php if (!empty($home_msg)):?>
     <div class="message">
         <div class="message-text">
-            <p><?php echo $home_msg;?></p>
+            <p id="home-msg"><?php echo $home_msg;?></p>
         </div>
     </div>
     <?php endif;?>
@@ -161,6 +161,13 @@
         var icons = ['<?php echo get_template_directory_uri();?>/images/marker-green.png'];
         initEventMap(document.getElementById('map'), events, icons);
     }
+</script>
+<script>
+    (function() {
+        var elem = document.getElementById('home-msg');
+        var url = '<?php echo admin_url('admin-ajax.php');?>';
+        initHomeMsgPolling(elem, url);
+    })();
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNTh_Ay85-bSJ5WO1v-Sknl7R_IEBMVx4&callback=initMap" async defer></script>
 <?php get_footer();?>

@@ -11,8 +11,8 @@
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
         <meta name="viewport" content="width=device-width">
         <script
-            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
         <script src="<?php echo get_template_directory_uri();?>/main.js?v=1708151147"></script>
     </head>

@@ -210,6 +210,15 @@ function disobedience_acf_google_map_api($api){
     return $api;
 }
 
+add_action('wp_ajax_get_home_msg', 'disobedience_ajax_get_home_msg');
+add_action('wp_ajax_nopriv_get_home_msg', 'disobedience_ajax_get_home_msg');
+function disobedience_ajax_get_home_msg() {
+    $msg = disobedience_get_home_msg();
+    wp_send_json_success(array(
+        'message' => $msg,
+    ));
+}
+
 function get_excerpt_by_id($post_id){
     $post = get_post($post_id);
     $excerpt = $post->post_excerpt;
