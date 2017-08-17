@@ -43,7 +43,7 @@
     $intro = apply_filters('the_content', get_the_content());
 
     $hero_img = get_field('home_hero_image', 'option');
-    $home_msg = get_field('home_message', 'option');
+    $home_msg = disobedience_get_home_msg();
 
     $stream_uri = get_field('home_stream_uri', 'option');
     $stream_live = get_field('home_stream_live', 'option');
@@ -83,7 +83,9 @@
     <?php endif;?>
     <?php if (!empty($home_msg)):?>
     <div class="message">
-        <div class="message-text"><?php echo $home_msg;?></div>
+        <div class="message-text">
+            <p><?php echo $home_msg;?></p>
+        </div>
     </div>
     <?php endif;?>
     <div class="intro">

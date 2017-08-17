@@ -176,6 +176,34 @@ function disobedience_pstr($id) {
     echo disobedience_str($id);
 }
 
+function disobedience_get_home_msg() {
+    $msg = get_transient('disobedience_home_msg');
+
+    if ($msg === false) {
+        try {
+            $tw_user = get_field('home_msg_tw_user', 'options');
+            if (empty($tw_user)) {
+                return null;
+            }
+
+            $url = 'https://twitrss.me/twitter_user_to_rss/?user='.$tw_user;
+            $xml = new DOMDocument();
+            $xml->load($url);
+            $first_item = $xml->getElementsByTagName('item')[0];
+            $title = $first_item->getElementsByTagName('title')[0];
+            $msg = $title->nodeValue;
+
+            // Store message in cache for five minutes
+            set_transient('disobedience_home_msg', $msg, 30);
+        }
+        catch (Exception $e) {
+            return null;
+        }
+    }
+
+    return $msg;
+}
+
 add_filter('acf/fields/google_map/api', 'disobedience_acf_google_map_api');
 function disobedience_acf_google_map_api($api){
     $api['key'] = 'AIzaSyDNTh_Ay85-bSJ5WO1v-Sknl7R_IEBMVx4';

@@ -225,12 +225,18 @@
             .message-text {
                 background: url(images/logo-line.png) repeat-x top left;
                 background-size: 30px;
-                padding: 5px 15px 0;
+                padding: 0 15px;
                 max-width: 24em;
-                font-size: 14px;
+                font-size: 13px;
                 height: 100px;
 
-                animation: message-underscore-blink 1s steps(4, end) infinite;
+                p {
+                    font-size: inherit;
+                    margin: 0;
+                    max-height: 6em;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
             }
 
             &:after {
@@ -242,10 +248,4 @@
             }
         }
     }
-}
-
-@keyframes message-underscore-blink {
-    0% { background-position: top left };
-    70% { background-position: top left };
-    100% { background-position: 0 100px };
 }

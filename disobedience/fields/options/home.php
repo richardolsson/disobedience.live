@@ -24,9 +24,9 @@ acf_add_local_field_group(array (
             'ui' => 1,
         ),
         array (
-            'key' => 'home_message',
-            'label' => 'Home message',
-            'name' => 'home_message',
+            'key' => 'home_msg_tw_user',
+            'label' => 'Home message twitter user',
+            'name' => 'home_msg_tw_user',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
