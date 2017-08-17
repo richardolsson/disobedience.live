@@ -177,8 +177,9 @@
         max-width: 80em;
 
         #map {
+            height: 200px;
             height: 50vh;
-            min-height: 400px;
+            min-height: 200px;
         }
 
         .cta {
