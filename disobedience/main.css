@@ -264,6 +264,19 @@ img {
     z-index: 1;
     color: white; }
 
+.home .stream #stream-player {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin-top: 2em; }
+  .home .stream #stream-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
 .home .intro {
   max-width: 80em; }
   .home .intro h1 {
@@ -387,8 +400,9 @@ img {
 .home .events {
   max-width: 80em; }
   .home .events #map {
+    height: 200px;
     height: 50vh;
-    min-height: 400px; }
+    min-height: 200px; }
   .home .events .cta {
     display: inline-block;
     background-color: transparent;
@@ -426,25 +440,22 @@ img {
     .home .message .message-text {
       background: url(images/logo-line.png) repeat-x top left;
       background-size: 30px;
-      padding: 5px 15px 0;
+      padding: 0 15px;
       max-width: 24em;
-      font-size: 14px;
-      height: 100px;
-      animation: message-underscore-blink 1s steps(4, end) infinite; }
+      font-size: 13px;
+      height: 100px; }
+      .home .message .message-text p {
+        font-size: inherit;
+        margin: 0;
+        max-height: 6em;
+        overflow: hidden;
+        text-overflow: ellipsis; }
     .home .message:after {
       content: " ";
       background: url(images/logo.png) no-repeat top right;
       background-size: 600px;
       width: 470px;
       height: 100px; } }
-
-@keyframes message-underscore-blink {
-  0% {
-    background-position: top left; }
-  70% {
-    background-position: top left; }
-  100% {
-    background-position: 0 100px; } }
 
 .about-page h1 {
   text-align: center;
@@ -778,7 +789,7 @@ form .small-print {
       margin: 10em 25%; } }
 
 .events-map {
-  height: 30em;
+  height: 20em;
   height: 60vh;
   margin: 0 0 2em; }
   .events-map #map {
