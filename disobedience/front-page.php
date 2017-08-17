@@ -1,5 +1,5 @@
 <?php
-    $start_time = mktime(0, 0, 0, 8, 22, 2017);
+    $start_time = mktime(12, 0, 0, 8, 22, 2017);
     $now = mktime();
     $diff = $start_time - $now;
     $days = $diff / 60 / 60 / 24;
