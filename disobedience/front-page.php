@@ -2,7 +2,12 @@
     $start_time = mktime(12, 0, 0, 8, 22, 2017);
     $now = mktime();
     $diff = $start_time - $now;
-    $days = $diff / 60 / 60 / 24;
+    $countdown_value = $diff / 60 / 60 / 24;
+    $countdown_unit = 'day';
+    if ($countdown_value < 1) {
+        $countdown_value = $diff / 60 / 60;
+        $countdown_unit = 'hour';
+    }
 ?>
 <?php get_header();?>
 <?php the_post();?>
@@ -96,7 +101,10 @@
     </div>
     <?php else: ?>
     <div class="countdown">
-        <h1><?php printf('%d %s remaining', $days, $days==1? 'day':'days') ?></h1>
+        <h1><?php printf('%d %s%s remaining',
+            $countdown_value,
+            $countdown_unit,
+            $days==1? '':'s') ?></h1>
     </div>
     <?php endif;?>
     <?php if (!empty($home_msg)):?>
