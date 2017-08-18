@@ -1,3 +1,8 @@
+<?php
+    $menu_locations = get_nav_menu_locations();
+    $menu_id = $menu_locations['header-menu'];
+    $menu_items = wp_get_nav_menu_items($menu_id);
+?>
 <!doctype html>
 <html>
     <head>
@@ -24,6 +29,38 @@
             <div class="header">
                 <a class="logo" href="/">DIS<span>_</span>OBEDIENCE.LIVE</a>
                 <div class="menu">
-                    <?php wp_nav_menu(array('theme_location' => 'header-menu'));?>
+                    <ul class="menu menu-main-menu">
+                    <?php foreach ($menu_items as $item):
+                        $cur_url = home_url(add_query_arg(array(),$wp->request)) . '/';
+                        $is_cur = ($cur_url == $item->url);
+                        $url = $item->url;
+                        $tpl = get_post_meta($item->object_id, '_wp_page_template', true);
+                        if ($tpl == 'page-about.php' && is_front_page()) {
+                            $url = get_home_url().'/#intro';
+                        }
+                        elseif ($tpl == 'page-addevent.php' && is_front_page()) {
+                            $url = get_home_url().'/#events';
+                        }
+                        elseif ($tpl == 'default') {
+                            $url = get_home_url().'/#stream';
+                        }
+                        elseif ($item->type == 'post_type_archive') {
+                            if ($item->object == 'activist') {
+                                $url = get_home_url().'/#activists';
+                            }
+                            elseif ($item->object == 'event' && is_front_page()) {
+                                $url = get_home_url().'/#events';
+                            }
+                            elseif ($item->object == 'voice' && is_front_page()) {
+                                $url = get_home_url().'/#voices';
+                            }
+                        }
+                    ?>
+                        <li id="menu-item-<?php echo $item->ID;?>"
+                            class="menu-item<?php if ($is_cur):?> current-menu-item<?php endif;?>">
+                            <a href="<?php echo $url;?>"><?php echo $item->title;?></a>
+                        </li>
+                    <?php endforeach;?>
+                    </ul>
                 </div>
             </div>

@@ -73,7 +73,7 @@
 ?>
 <div class="content">
     <?php if (!empty($stream_uri) && !empty($stream_live)):?>
-    <div class="stream">
+    <div class="stream" id="stream">
         <div id="stream-player"></div>
     </div>
     <script>
@@ -96,11 +96,11 @@
         })();
     </script>
     <?php elseif (!empty($hero_img)):?>
-    <div class="hero">
+    <div class="hero" id="stream">
         <img src="<?php echo $hero_img['url'];?>">
     </div>
     <?php else: ?>
-    <div class="countdown">
+    <div class="countdown" id="stream">
         <h1><?php printf('%d %s%s remaining',
             $countdown_value,
             $countdown_unit,
@@ -114,7 +114,7 @@
         </div>
     </div>
     <?php endif;?>
-    <div class="intro">
+    <div class="intro" id="intro">
         <h1 class="flash"
             style="background-image: url(<?php echo get_the_post_thumbnail_url();?>)"><?php the_title();?></h1>
         <div class="post-content page-content">
@@ -125,7 +125,7 @@
         <?php endif;?>
     </div>
     <?php if (!empty($activists)):?>
-    <div class="activists">
+    <div class="activists" id="activists">
         <h2><?php disobedience_pstr('home_activists_header');?></h2>
         <ul class="activist-list">
         <?php foreach ($activists as $id): $url = get_the_permalink($id); ?>
@@ -140,7 +140,7 @@
     </div>
     <?php endif;?>
     <?php if (!empty($voices)):?>
-    <div class="voices">
+    <div class="voices" id="voices">
         <h2><?php disobedience_pstr('home_voices_header');?></h2>
         <div class="gradient"></div>
         <p>
@@ -156,7 +156,7 @@
         </p>
     </div>
     <?php endif;?>
-    <div class="events">
+    <div class="events" id="events">
         <h2><?php disobedience_pstr('home_events_header');?></h2>
         <p>
             <?php disobedience_pstr('home_events_intro');?>
