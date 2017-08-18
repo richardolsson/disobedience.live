@@ -198,5 +198,23 @@
         initHomeMsgPolling(elem, url);
     })();
 </script>
+<script>
+$('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function(event) {
+        // Figure out element to scroll to
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        // Does a scroll target exist?
+        if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top
+            }, 300);
+        }
+    });
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNTh_Ay85-bSJ5WO1v-Sknl7R_IEBMVx4&callback=initMap" async defer></script>
 <?php get_footer();?>
