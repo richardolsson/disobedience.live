@@ -191,11 +191,13 @@ function disobedience_get_home_msg() {
             $xml = new DOMDocument();
             $xml->load($url);
             $first_item = $xml->getElementsByTagName('item')[0];
-            $title = $first_item->getElementsByTagName('title')[0];
-            $msg = $title->nodeValue;
+            if ($first_item) {
+                $title = $first_item->getElementsByTagName('title')[0];
+                $msg = $title->nodeValue;
 
-            // Store message in cache for five minutes
-            set_transient('disobedience_home_msg', $msg, 30);
+                // Store message in cache for five minutes
+                set_transient('disobedience_home_msg', $msg, 30);
+            }
         }
         catch (Exception $e) {
             return null;
