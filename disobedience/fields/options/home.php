@@ -67,7 +67,7 @@ acf_add_local_field_group(array (
     'fields' => array (
         array (
             'key' => 'home_stream_uri',
-            'label' => 'Bambuser stream resource URI',
+            'label' => 'Bambuser stream embed URL',
             'name' => 'home_stream_uri',
             'type' => 'text',
             'instructions' => '',
@@ -84,7 +84,7 @@ acf_add_local_field_group(array (
         ),
         array (
             'key' => 'home_youtube_url',
-            'label' => 'YouTube stream URL',
+            'label' => 'YouTube stream embed URL',
             'name' => 'home_youtube_url',
             'type' => 'text',
             'instructions' => '',
