@@ -11,7 +11,6 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri();?>/main.css?v=1708211312">
         <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
         <link rel="icon" href="<?php echo get_template_directory_uri();?>/images/favicon.png">
-        <script src="https://dist.bambuser.net/player/lib/bambuser-video-iframeapi/latest/bambuser-video-iframeapi.min.js"></script>
         <script src="https://use.typekit.net/rdb8ojx.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
         <meta name="viewport" content="width=device-width">

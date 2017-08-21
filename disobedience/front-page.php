@@ -84,33 +84,10 @@
     <?php if (($stream_uri) && !empty($stream_live)):?>
     <div class="stream" id="stream">
         <div id="stream-player">
-        <?php if ($stream_ch == 'youtube'):?>
             <iframe width="560" height="315"
-                src="<?php echo $stream_uri;?>&autoplay=1" frameborder="0" allowfullscreen></iframe>
-        <?php endif;?>
+                src="<?php echo $stream_uri;?>" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
-    <?php if ($stream_ch == 'bambuser'):?>
-    <script>
-        (function() {
-            var elem = document.getElementById('stream-player');
-            var uri = '<?php echo $stream_uri; ?>';
-            var player = BambuserPlayer.create(elem, uri, {
-            });
-
-            player.play();
-
-            // Make the video play/pause when the user clicks on the container div.
-            elem.addEventListener('click', function() {
-                return player.paused ? player.play() : player.pause();
-            });
-
-            if (navigator.userAgent.match(/iPad|iPhone|iPod/) && !window.MSStream) {
-                player.controls = true;
-            }
-        })();
-    </script>
-    <?php endif;?>
     <?php elseif (!empty($hero_img)):?>
     <div class="hero" id="stream">
         <img src="<?php echo $hero_img['url'];?>">
