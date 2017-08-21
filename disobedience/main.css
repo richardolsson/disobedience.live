@@ -308,7 +308,9 @@ img {
   max-width: 80em; }
   .home .activists .activist-list {
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; }
     .home .activists .activist-list:after {
       content: "";
       display: block;
@@ -319,13 +321,10 @@ img {
       padding: 0; }
     .home .activists .activist-list .activist-item {
       display: block;
-      float: left;
       text-align: left;
       width: 48%;
       margin: 2em 1%;
       font-size: 0.7em; }
-      .home .activists .activist-list .activist-item:nth-child-of-type(2n + 0) {
-        clear: left; }
       .home .activists .activist-list .activist-item .thumb-link {
         position: relative; }
         .home .activists .activist-list .activist-item .thumb-link:before {
