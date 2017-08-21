@@ -71,9 +71,7 @@
     $stream_live = get_field('home_stream_live', 'option');
     $stream_ch = get_field('home_stream_channel', 'option');
     if ($stream_ch == 'youtube') {
-        $yt_url = get_field('home_youtube_url', 'option');
-        $yt_id = disobedience_get_youtube_id($yt_url);
-        $stream_uri = 'https://www.youtube.com/embed/' . $yt_id;
+        $stream_uri = get_field('home_youtube_url', 'option');
     }
     elseif ($stream_ch == 'bambuser') {
         $stream_uri = get_field('home_stream_uri', 'option');
@@ -88,7 +86,7 @@
         <div id="stream-player">
         <?php if ($stream_ch == 'youtube'):?>
             <iframe width="560" height="315"
-                src="<?php echo $stream_uri;?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
+                src="<?php echo $stream_uri;?>&autoplay=1" frameborder="0" allowfullscreen></iframe>
         <?php endif;?>
         </div>
     </div>
