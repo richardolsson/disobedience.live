@@ -290,6 +290,19 @@ img {
     color: white;
     background-position: center center;
     background-size: cover; }
+  .home .intro .cta {
+    display: inline-block;
+    background-color: transparent;
+    padding: 0.5em 3em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: 2px solid rgba(0, 0, 0, 0.75);
+    color: black; }
+    .home .intro .cta:hover {
+      background-color: rgba(0, 0, 0, 0.2); }
 
 .home .activists {
   max-width: 80em; }
