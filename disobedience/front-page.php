@@ -1,8 +1,8 @@
 <?php
-    $start_time = mktime(12, 0, 0, 8, 22, 2017);
+    $start_time = mktime(10, 0, 0, 8, 22, 2017);
     $now = mktime();
     $diff = $start_time - $now;
-    $countdown_value = round($diff / 60 / 60 / 24);
+    $countdown_value = floor($diff / 60 / 60 / 24);
     $countdown_unit = 'day';
     if ($countdown_value < 1) {
         $countdown_value = round($diff / 60 / 60);
