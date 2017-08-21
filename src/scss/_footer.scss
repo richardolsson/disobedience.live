@@ -9,4 +9,26 @@
             text-decoration: underline;
         }
     }
+
+    .social-list {
+        @include list-reset;
+        margin: 2em 0;
+
+        .social-item {
+            display: inline-block;
+            margin: 0 1em;
+
+            img {
+                max-width: 2em;
+                opacity: 0.6;
+                transition: opacity 0.2s;
+            }
+
+            a:hover {
+                img {
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
 }

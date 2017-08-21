@@ -72,4 +72,64 @@ acf_add_local_field_group(array (
     'description' => '',
 ));
 
+acf_add_local_field_group(array (
+    'key' => 'misc_social',
+    'title' => 'Social media options',
+    'fields' => array (
+        array (
+            'key' => 'misc_social_fb',
+            'label' => 'Facebook page URL',
+            'name' => 'misc_social_fb',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 1,
+        ),
+        array (
+            'key' => 'misc_social_ig',
+            'label' => 'Instagram URL',
+            'name' => 'misc_social_ig',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 1,
+        ),
+        array (
+            'key' => 'misc_social_tw',
+            'label' => 'Twitter URL',
+            'name' => 'misc_social_tw',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 1,
+        ),
+    ),
+    'location' => array (
+        array (
+            array (
+                'param' => 'options_page',
+                'operator' => '==',
+                'value' => 'misc',
+            ),
+        ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => 1,
+    'description' => '',
+));
+
 endif;
