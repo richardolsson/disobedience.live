@@ -3,15 +3,7 @@
 <?php
     $facts = get_field('facts');
     $video_url = get_field('video_youtube_url');
-    if (strpos($video_url, '//youtu.be') !== false) {
-        $fields = explode('/', $video_url);
-        $video_id = $fields[count($fields) - 1];
-    }
-    else {
-        $qs = parse_url($video_url, PHP_URL_QUERY);
-        parse_str($qs, $params);
-        $video_id = $params['v'];
-    }
+    $video_id = disobedience_get_youtube_id($video_url);
 ?>
 <div class="content">
     <div class="thumbnail flash">

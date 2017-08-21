@@ -222,6 +222,18 @@ function disobedience_ajax_get_home_msg() {
     ));
 }
 
+function disobedience_get_youtube_id($video_url) {
+    if (strpos($video_url, '//youtu.be') !== false) {
+        $fields = explode('/', $video_url);
+        return $fields[count($fields) - 1];
+    }
+    else {
+        $qs = parse_url($video_url, PHP_URL_QUERY);
+        parse_str($qs, $params);
+        return $params['v'];
+    }
+}
+
 function get_excerpt_by_id($post_id){
     $post = get_post($post_id);
     $excerpt = $post->post_excerpt;

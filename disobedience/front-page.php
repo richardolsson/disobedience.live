@@ -68,14 +68,31 @@
     $hero_img = get_field('home_hero_image', 'option');
     $home_msg = disobedience_get_home_msg();
 
-    $stream_uri = get_field('home_stream_uri', 'option');
     $stream_live = get_field('home_stream_live', 'option');
+    $stream_ch = get_field('home_stream_channel', 'option');
+    if ($stream_ch == 'youtube') {
+        $yt_url = get_field('home_youtube_url', 'option');
+        $yt_id = disobedience_get_youtube_id($yt_url);
+        $stream_uri = 'https://www.youtube.com/embed/' . $yt_id;
+    }
+    elseif ($stream_ch == 'bambuser') {
+        $stream_uri = get_field('home_stream_uri', 'option');
+    }
+    else {
+        $stream_live = false;
+    }
 ?>
 <div class="content">
-    <?php if (!empty($stream_uri) && !empty($stream_live)):?>
+    <?php if (($stream_uri) && !empty($stream_live)):?>
     <div class="stream" id="stream">
-        <div id="stream-player"></div>
+        <div id="stream-player">
+        <?php if ($stream_ch == 'youtube'):?>
+            <iframe width="560" height="315"
+                src="<?php echo $stream_uri;?>?autoplay=1" frameborder="0" allowfullscreen></iframe>
+        <?php endif;?>
+        </div>
     </div>
+    <?php if ($stream_ch == 'bambuser'):?>
     <script>
         (function() {
             var elem = document.getElementById('stream-player');
@@ -95,6 +112,7 @@
             }
         })();
     </script>
+    <?php endif;?>
     <?php elseif (!empty($hero_img)):?>
     <div class="hero" id="stream">
         <img src="<?php echo $hero_img['url'];?>">
