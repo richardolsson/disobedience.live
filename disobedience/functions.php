@@ -133,6 +133,8 @@ function disobedience_register_strings() {
 
         // Events page strings
         pll_register_string('disobedience', 'events_map_legend_green', 'events');
+        pll_register_string('disobedience', 'events_map_legend_blue', 'events');
+        pll_register_string('disobedience', 'events_map_legend_purple', 'events');
         pll_register_string('disobedience', 'events_archive_table_city', 'events');
         pll_register_string('disobedience', 'events_archive_table_date', 'events');
         pll_register_string('disobedience', 'events_archive_table_time', 'events');
