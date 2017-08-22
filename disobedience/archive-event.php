@@ -1,3 +1,14 @@
+<?php
+function event_is_current() {
+    $start_date = get_field('start_date');
+    $end_date = get_field('end_date');
+    $cur_date = date('Y-m-d');
+
+    return ($start_date > $cur_date || $end_date > $cur_date);
+
+    return false;
+}
+?>
 <?php get_header(); ?>
 <div class="events-map flash">
     <div id="map"></div>
@@ -18,19 +29,21 @@
     <?
         while (have_posts()):
             the_post();
-        ?>
-        <tr class="events-row">
-            <td><?php the_field('city')?>, <?php the_field('country');?></td>
-            <td><?php the_field('start_date'); ?></td>
-            <td><?php the_field('start_time'); ?></td>
-            <td>
-                <a class="title" href="<?php the_permalink();?>"><?php the_title();?></a>
-                <?php if (get_field('organizer')): ?>
-                <span class="organizer"><?php the_field('organizer');?></span>
-                <?php endif; ?>
-            </td>
-        </tr>
-        <?php
+            if (event_is_current()):
+            ?>
+            <tr class="events-row">
+                <td><?php the_field('city')?>, <?php the_field('country');?></td>
+                <td><?php the_field('start_date'); ?></td>
+                <td><?php the_field('start_time'); ?></td>
+                <td>
+                    <a class="title" href="<?php the_permalink();?>"><?php the_title();?></a>
+                    <?php if (get_field('organizer')): ?>
+                    <span class="organizer"><?php the_field('organizer');?></span>
+                    <?php endif; ?>
+                </td>
+            </tr>
+            <?php
+            endif;
         endwhile;
     endif;
 ?>
@@ -40,7 +53,7 @@
 <script>
     var events = [
     <?php while (have_posts()): the_post();?>
-    <?php if ($loc = get_field('location')):?>
+    <?php if (event_is_current() && $loc = get_field('location')):?>
         {
             link: '<?php the_permalink();?>',
             title: '<?php the_title();?>',
