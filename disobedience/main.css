@@ -824,20 +824,28 @@ form .small-print {
   .events-map #map {
     height: 100%;
     width: 100%; }
-  .events-map .legend {
+  .events-map .legends {
     position: relative;
-    top: -2.4em;
-    padding: 0.6em;
     background-color: white;
-    display: inline-block; }
-    .events-map .legend:before {
-      content: "";
-      display: block;
-      float: left;
-      margin-right: 0.4em;
-      background-color: #0de7a3;
-      width: 1.4em;
-      height: 1.4em; }
+    display: inline-block;
+    top: -2.4em; }
+    .events-map .legends .legend {
+      padding: 0.6em;
+      display: inline-block;
+      margin: 0; }
+      .events-map .legends .legend:before {
+        content: "";
+        display: block;
+        float: left;
+        margin-right: 0.4em;
+        width: 1.4em;
+        height: 1.4em; }
+      .events-map .legends .legend.green:before {
+        background-color: #0de7a3; }
+      .events-map .legends .legend.blue:before {
+        background-color: blue; }
+      .events-map .legends .legend.purple:before {
+        background-color: #c300ff; }
 
 .events-table {
   border-spacing: 0;
@@ -856,6 +864,10 @@ form .small-print {
   .events-table tr:nth-of-type(2n+0) td {
     position: relative;
     left: 0.5%; }
+  .events-table .events-row.past-event td {
+    color: #ddd; }
+  .events-table .events-row.past-event a {
+    color: inherit; }
   .events-table .date, .events-table .time {
     white-space: nowrap; }
   .events-table .title, .events-table .organizer {

@@ -81,13 +81,13 @@ $(document).ready(function() {
     });
 });
 
-function initMarker(ev, map, bounds, icons) {
+function initMarker(ev, map, bounds) {
     var pos = new google.maps.LatLng(ev.lat, ev.lng);
 
     bounds.extend(pos);
 
     var image = {
-        url: ev.today? icons[0] : icons[1],
+        url: ev.icon,
         size: new google.maps.Size(64, 90),
         scaledSize: new google.maps.Size(32, 45),
         origin: new google.maps.Point(0,0),
