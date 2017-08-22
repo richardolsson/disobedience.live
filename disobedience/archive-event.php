@@ -1,14 +1,3 @@
-<?php
-function event_is_current() {
-    $start_date = get_field('start_date');
-    $end_date = get_field('end_date');
-    $cur_date = date('Y-m-d');
-
-    return ($start_date > $cur_date || $end_date > $cur_date);
-
-    return false;
-}
-?>
 <?php get_header(); ?>
 <div class="events-map flash">
     <div id="map"></div>
@@ -29,7 +18,7 @@ function event_is_current() {
     <?
         while (have_posts()):
             the_post();
-            if (event_is_current()):
+            if (disobedience_event_is_current()):
             ?>
             <tr class="events-row">
                 <td><?php the_field('city')?>, <?php the_field('country');?></td>
@@ -53,7 +42,7 @@ function event_is_current() {
 <script>
     var events = [
     <?php while (have_posts()): the_post();?>
-    <?php if (event_is_current() && $loc = get_field('location')):?>
+    <?php if (disobedience_event_is_current() && $loc = get_field('location')):?>
         {
             link: '<?php the_permalink();?>',
             title: '<?php the_title();?>',

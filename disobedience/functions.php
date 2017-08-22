@@ -243,6 +243,14 @@ function disobedience_get_youtube_id($video_url) {
     }
 }
 
+function disobedience_event_is_current($event = null) {
+    $start_date = get_field('start_date', $event);
+    $end_date = get_field('end_date', $event);
+    $cur_date = date('Y-m-d');
+
+    return ($start_date > $cur_date || $end_date > $cur_date);
+}
+
 function get_excerpt_by_id($post_id){
     $post = get_post($post_id);
     $excerpt = $post->post_excerpt;
