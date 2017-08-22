@@ -94,10 +94,12 @@
     </div>
     <?php else: ?>
     <div class="countdown" id="stream">
+        <?php if ($countdown_value >= 0):?>
         <h1><?php printf('%d %s%s remaining',
             $countdown_value,
             $countdown_unit,
             $countdown_value==1? '':'s') ?></h1>
+        <?php endif;?>
     </div>
     <script>
         setTimeout(function() {
