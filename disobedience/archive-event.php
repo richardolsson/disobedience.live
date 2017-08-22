@@ -1,8 +1,16 @@
 <?php get_header(); ?>
 <div class="events-map flash">
     <div id="map"></div>
-    <div class="legend">
-        <?php disobedience_pstr('events_map_legend_green');?>
+    <div class="legends">
+        <div class="legend green">
+            <?php disobedience_pstr('events_map_legend_green');?>
+        </div>
+        <div class="legend blue">
+            <?php disobedience_pstr('events_map_legend_blue');?>
+        </div>
+        <div class="legend purple">
+            <?php disobedience_pstr('events_map_legend_purple');?>
+        </div>
     </div>
 </div>
 <div class="content">
@@ -21,9 +29,8 @@
     <?
         while (have_posts()):
             the_post();
-            if (disobedience_event_is_current()):
             ?>
-            <tr class="events-row">
+            <tr class="events-row<?php if (!disobedience_event_is_current()):?> past-event<?php endif;?>">
                 <td class="location"><?php the_field('city')?>, <?php the_field('country');?></td>
                 <td class="date"><?php the_field('start_date'); ?></td>
                 <td class="time"><?php the_field('start_time'); ?></td>
@@ -35,7 +42,6 @@
                 </td>
             </tr>
             <?php
-            endif;
         endwhile;
     endif;
 ?>
@@ -45,25 +51,20 @@
 <script>
     var events = [
     <?php while (have_posts()): the_post();?>
-    <?php if (disobedience_event_is_current() && $loc = get_field('location')):?>
+    <?php if ($loc = get_field('location')):?>
         {
             link: '<?php the_permalink();?>',
             title: '<?php the_title();?>',
             lat: <?php echo $loc['lat'];?>,
             lng: <?php echo $loc['lng'];?>,
-            today: <?php echo disobedience_event_is_today($event)? 'true' : 'false';?>,
+            icon: '<?php echo disobedience_event_icon($event);?>',
         },
     <?php endif;?>
     <?php endwhile;?>
     ];
 
     function initMap() {
-        var icons = [
-            '<?php echo get_template_directory_uri();?>/images/marker-green.png',
-            '<?php echo get_template_directory_uri();?>/images/marker-blue.png'
-        ];
-
-        initEventMap(document.getElementById('map'), events, icons);
+        initEventMap(document.getElementById('map'), events);
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNTh_Ay85-bSJ5WO1v-Sknl7R_IEBMVx4&callback=initMap" async defer></script>

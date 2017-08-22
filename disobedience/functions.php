@@ -249,7 +249,7 @@ function disobedience_event_is_current($event = null) {
     $end_date = get_field('end_date', $event);
     $cur_date = date('Y-m-d');
 
-    return ($start_date >= $cur_date || $end_date >= $cur_date);
+    return ($start_date >= $cur_date || (!empty($end_date) && $end_date >= $cur_date));
 }
 
 function disobedience_event_is_today($event = null) {
@@ -258,6 +258,18 @@ function disobedience_event_is_today($event = null) {
     $cur_date = date('Y-m-d');
 
     return ($start_date <= $cur_date && ($end_date >= $cur_date || empty($end_date)));
+}
+
+function disobedience_event_icon($event = null) {
+    if (disobedience_event_is_today($event)) {
+        return get_template_directory_uri() . '/images/marker-green.png';
+    }
+    elseif (disobedience_event_is_current($event)) {
+        return get_template_directory_uri() . '/images/marker-purple.png';
+    }
+    else {
+        return get_template_directory_uri() . '/images/marker-blue.png';
+    }
 }
 
 function get_excerpt_by_id($post_id){

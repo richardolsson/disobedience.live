@@ -182,19 +182,14 @@
             title: '<?php echo get_the_title($id);?>',
             lat: <?php echo $loc['lat'];?>,
             lng: <?php echo $loc['lng'];?>,
-            today: <?php echo disobedience_event_is_today($event)? 'true' : 'false';?>,
+            icon: '<?php echo disobedience_event_icon($event);?>',
         },
     <?php endif;?>
     <?php endforeach;?>
     ];
 
     function initMap() {
-        var icons = [
-            '<?php echo get_template_directory_uri();?>/images/marker-green.png',
-            '<?php echo get_template_directory_uri();?>/images/marker-blue.png'
-        ];
-
-        initEventMap(document.getElementById('map'), events, icons);
+        initEventMap(document.getElementById('map'), events);
     }
 </script>
 <script>

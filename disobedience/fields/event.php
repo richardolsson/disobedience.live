@@ -132,8 +132,8 @@ acf_add_local_field_group(array (
                 'class' => '',
                 'id' => '',
             ),
-            'display_format' => 'd/m/Y',
-            'return_format' => 'd/m/Y',
+            'display_format' => 'Y-m-d',
+            'return_format' => 'Y-m-d',
             'first_day' => 1,
         ),
         array (

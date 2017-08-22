@@ -65,22 +65,43 @@
         width: 100%;
     }
 
-    .legend {
+    .legends {
         position: relative;
-        top: -2.4em;
-
-        padding: 0.6em;
         background-color: white;
         display: inline-block;
+        top: -2.4em;
 
-        &:before {
-            content: "";
-            display: block;
-            float: left;
-            margin-right: 0.4em;
-            background-color: $c-brand-green;
-            width: 1.4em;
-            height: 1.4em;
+        .legend {
+            padding: 0.6em;
+            display: inline-block;
+            margin: 0;
+
+            &:before {
+                content: "";
+                display: block;
+                float: left;
+                margin-right: 0.4em;
+                width: 1.4em;
+                height: 1.4em;
+            }
+
+            &.green {
+                &:before {
+                    background-color: $c-brand-green;
+                }
+            }
+
+            &.blue {
+                &:before {
+                    background-color: $c-brand-blue;
+                }
+            }
+
+            &.purple {
+                &:before {
+                    background-color: $c-brand-purple;
+                }
+            }
         }
     }
 }
@@ -112,6 +133,18 @@
         td {
             position: relative;
             left: 0.5%;
+        }
+    }
+
+    .events-row {
+        &.past-event {
+            td {
+                color: #ddd;
+            }
+
+            a {
+                color: inherit;
+            }
         }
     }
 
