@@ -99,6 +99,11 @@
             $countdown_unit,
             $countdown_value==1? '':'s') ?></h1>
     </div>
+    <script>
+        setTimeout(function() {
+            location.reload(true);
+        }, 60000);
+    </script>
     <?php endif;?>
     <?php if (!empty($home_msg)):?>
     <div class="message">
