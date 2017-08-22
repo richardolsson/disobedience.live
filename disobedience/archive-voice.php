@@ -24,7 +24,7 @@ shuffle($voices);
             setup_postdata($voice);
         ?>
         <div class="voice">
-            <a class="thumbnail flash" href="<?php echo get_field('youtube_url');?>">
+            <a class="thumbnail flash" target="_blank" href="<?php echo get_field('youtube_url');?>">
                 <?php the_post_thumbnail('voice-thumbnail');?>
             </a>
             <h2><?php the_title();?></h2>
@@ -32,8 +32,8 @@ shuffle($voices);
             <ul class="fact-list">
             <?php while (have_rows('facts')): the_row();?>
                 <li>
-                    <span class="label"><?php the_sub_field('label');?>:<span>
-                    <span class="value"><?php the_sub_field('text');?><span>
+                    <span class="label"><?php the_sub_field('label');?></span>
+                    <span class="value"><?php the_sub_field('text');?></span>
                 </li>
             <?php endwhile;?>
             <?php endif;?>
