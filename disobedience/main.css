@@ -429,6 +429,22 @@ img {
     margin-top: 2em; }
     .home .events .cta:hover {
       background-color: rgba(0, 0, 0, 0.2); }
+  .home .events .map-container {
+    text-align: left; }
+    .home .events .map-container .legend {
+      position: relative;
+      top: -2.4em;
+      padding: 0.6em;
+      background-color: white;
+      display: inline-block; }
+      .home .events .map-container .legend:before {
+        content: "";
+        display: block;
+        float: left;
+        margin-right: 0.4em;
+        background-color: #0de7a3;
+        width: 1.4em;
+        height: 1.4em; }
 
 @media (min-width: 719px) {
   .home h2 {
@@ -807,6 +823,20 @@ form .small-print {
   .events-map #map {
     height: 100%;
     width: 100%; }
+  .events-map .legend {
+    position: relative;
+    top: -2.4em;
+    padding: 0.6em;
+    background-color: white;
+    display: inline-block; }
+    .events-map .legend:before {
+      content: "";
+      display: block;
+      float: left;
+      margin-right: 0.4em;
+      background-color: #0de7a3;
+      width: 1.4em;
+      height: 1.4em; }
 
 .events-table {
   border-spacing: 0;
