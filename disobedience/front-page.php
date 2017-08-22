@@ -161,6 +161,9 @@
         </p>
         <div class="map-container flash">
             <div id="map"></div>
+            <div class="legend">
+                <?php disobedience_pstr('events_map_legend_green');?>
+            </div>
         </div>
 
         <a href="/events" class="cta"><?php disobedience_pstr('home_events_list_button');?></a>
@@ -179,13 +182,18 @@
             title: '<?php echo get_the_title($id);?>',
             lat: <?php echo $loc['lat'];?>,
             lng: <?php echo $loc['lng'];?>,
+            today: <?php echo disobedience_event_is_today($event)? 'true' : 'false';?>,
         },
     <?php endif;?>
     <?php endforeach;?>
     ];
 
     function initMap() {
-        var icons = ['<?php echo get_template_directory_uri();?>/images/marker-green.png'];
+        var icons = [
+            '<?php echo get_template_directory_uri();?>/images/marker-green.png',
+            '<?php echo get_template_directory_uri();?>/images/marker-blue.png'
+        ];
+
         initEventMap(document.getElementById('map'), events, icons);
     }
 </script>

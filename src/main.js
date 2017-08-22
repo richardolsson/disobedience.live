@@ -86,7 +86,7 @@ function initMarker(ev, map, bounds, icons) {
     bounds.extend(pos);
 
     var image = {
-        url: icons[0],
+        url: ev.today? icons[0] : icons[1],
         size: new google.maps.Size(64, 90),
         scaledSize: new google.maps.Size(32, 45),
         origin: new google.maps.Point(0,0),

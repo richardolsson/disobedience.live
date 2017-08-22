@@ -132,6 +132,7 @@ function disobedience_register_strings() {
         pll_register_string('disobedience', 'activists_single_share', 'activists', true);
 
         // Events page strings
+        pll_register_string('disobedience', 'events_map_legend_green', 'events');
         pll_register_string('disobedience', 'events_archive_table_city', 'events');
         pll_register_string('disobedience', 'events_archive_table_date', 'events');
         pll_register_string('disobedience', 'events_archive_table_time', 'events');
@@ -249,6 +250,14 @@ function disobedience_event_is_current($event = null) {
     $cur_date = date('Y-m-d');
 
     return ($start_date > $cur_date || $end_date > $cur_date);
+}
+
+function disobedience_event_is_today($event = null) {
+    $start_date = get_field('start_date', $event);
+    $end_date = get_field('end_date', $event);
+    $cur_date = date('Y-m-d');
+
+    return ($start_date <= $cur_date && ($end_date >= $cur_date || empty($end_date)));
 }
 
 function get_excerpt_by_id($post_id){

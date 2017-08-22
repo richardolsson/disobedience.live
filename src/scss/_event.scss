@@ -64,6 +64,25 @@
         height: 100%;
         width: 100%;
     }
+
+    .legend {
+        position: relative;
+        top: -2.4em;
+
+        padding: 0.6em;
+        background-color: white;
+        display: inline-block;
+
+        &:before {
+            content: "";
+            display: block;
+            float: left;
+            margin-right: 0.4em;
+            background-color: $c-brand-green;
+            width: 1.4em;
+            height: 1.4em;
+        }
+    }
 }
 
 .events-table {
