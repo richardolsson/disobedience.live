@@ -24,10 +24,10 @@
             if (disobedience_event_is_current()):
             ?>
             <tr class="events-row">
-                <td><?php the_field('city')?>, <?php the_field('country');?></td>
-                <td><?php the_field('start_date'); ?></td>
-                <td><?php the_field('start_time'); ?></td>
-                <td>
+                <td class="location"><?php the_field('city')?>, <?php the_field('country');?></td>
+                <td class="date"><?php the_field('start_date'); ?></td>
+                <td class="time"><?php the_field('start_time'); ?></td>
+                <td class="title">
                     <a class="title" href="<?php the_permalink();?>"><?php the_title();?></a>
                     <?php if (get_field('organizer')): ?>
                     <span class="organizer"><?php the_field('organizer');?></span>

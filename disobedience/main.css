@@ -855,6 +855,8 @@ form .small-print {
   .events-table tr:nth-of-type(2n+0) td {
     position: relative;
     left: 0.5%; }
+  .events-table .date, .events-table .time {
+    white-space: nowrap; }
   .events-table .title, .events-table .organizer {
     display: block; }
   .events-table .organizer {

@@ -115,6 +115,10 @@
         }
     }
 
+    .date, .time {
+        white-space: nowrap;
+    }
+
     .title, .organizer {
         display: block;
     }
