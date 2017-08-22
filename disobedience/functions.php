@@ -222,6 +222,15 @@ function disobedience_ajax_get_home_msg() {
     ));
 }
 
+add_action('pre_get_posts', 'disobedience_event_archive_query', 1);
+function disobedience_event_archive_query($query) {
+    if ($query->is_post_type_archive && $query->query['post_type'] == 'event') {
+        $query->query_vars['meta_key'] = 'start_date';
+        $query->query_vars['orderby'] = 'meta_value';
+        $query->query_vars['order'] = 'ASC';
+    }
+}
+
 function disobedience_get_youtube_id($video_url) {
     if (strpos($video_url, '//youtu.be') !== false) {
         $fields = explode('/', $video_url);
