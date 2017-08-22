@@ -181,6 +181,22 @@ function disobedience_pstr($id) {
 function disobedience_get_home_msg() {
     $msg = get_transient('disobedience_home_msg');
 
+    function getDivsByClassName($doc, $cls) {
+        $divs = array();
+        $allDivs = $doc->getElementsByTagName('div');
+
+        for ($i=0; $i < $allDivs->length; $i++) {
+            $div = $allDivs->item($i);
+            $classAttr = $div->getAttribute('class');
+            $classes = explode(' ', $classAttr);
+            if (in_array($cls, $classes)) {
+                array_push($divs, $div);
+            }
+        }
+
+        return $divs;
+    }
+
     if ($msg === false) {
         try {
             $tw_user = get_field('home_msg_tw_user', 'options');
@@ -188,16 +204,16 @@ function disobedience_get_home_msg() {
                 return null;
             }
 
-            $url = 'https://twitrss.me/twitter_user_to_rss/?user='.$tw_user;
-            $xml = new DOMDocument();
-            $xml->load($url);
-            $first_item = $xml->getElementsByTagName('item')[0];
-            if ($first_item) {
-                $title = $first_item->getElementsByTagName('title')[0];
-                $msg = $title->nodeValue;
+            $url = 'https://mobile.twitter.com/'.$tw_user;
+            $html = new DOMDocument();
+            $html->loadHTMLFile($url);
+            $tweets = getDivsByClassName($html, 'tweet-text');
+            if (!empty($tweets)) {
+                $tweet = $tweets[0];
+                $msg = trim($tweet->nodeValue);
 
                 // Store message in cache for five minutes
-                set_transient('disobedience_home_msg', $msg, 30);
+                set_transient('disobedience_home_msg', $msg, rand(60, 180));
             }
         }
         catch (Exception $e) {
