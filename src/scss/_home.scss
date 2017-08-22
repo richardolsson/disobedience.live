@@ -248,14 +248,16 @@
             }
 
             .message-text {
+                display: flex;
                 background: url(images/logo-line.png) repeat-x top left;
                 background-size: 30px;
                 padding: 0 15px;
                 max-width: 24em;
                 font-size: 13px;
-                height: 100px;
+                height: 94px;
 
                 p {
+                    align-self: center;
                     font-size: inherit;
                     margin: 0;
                     max-height: 6em;
