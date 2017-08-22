@@ -96,7 +96,8 @@ img {
     display: block;
     font-family: "alternate-gothic-no-1-d", sans-serif;
     font-size: 2em;
-    text-decoration: none; }
+    text-decoration: none;
+    line-height: 1em; }
     .header .logo span {
       display: inline-block;
       margin: 0 -0.1em;
