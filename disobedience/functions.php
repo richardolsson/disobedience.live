@@ -249,7 +249,7 @@ function disobedience_event_is_current($event = null) {
     $end_date = get_field('end_date', $event);
     $cur_date = date('Y-m-d');
 
-    return ($start_date > $cur_date || $end_date > $cur_date);
+    return ($start_date >= $cur_date || $end_date >= $cur_date);
 }
 
 function disobedience_event_is_today($event = null) {
