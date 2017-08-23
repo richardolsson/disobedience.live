@@ -475,6 +475,8 @@ img {
       font-size: 13px;
       height: 94px; }
       .home .message .message-text p {
+        position: relative;
+        top: -6px;
         align-self: center;
         font-size: inherit;
         margin: 0;
