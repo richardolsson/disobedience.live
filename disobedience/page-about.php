@@ -38,6 +38,9 @@ else {
             $day, $hours, $minutes);
 }
 
+// Hide countdown (updated after stream ends)
+$countdown = '<div class="countdown"></div>';
+
 $html = apply_filters('the_content', get_the_content());
 $html = preg_replace('/<\/p>\s*<p>/', '</p>'.$countdown.'<p>', $html, 1);
 $tn_url = get_the_post_thumbnail_url();
