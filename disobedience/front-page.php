@@ -177,7 +177,7 @@
     <?php
         foreach ($events as $event):
             $id = $event->ID;
-            if (disobedience_event_is_current($event) && $loc = get_field('location', $id)):
+            if ($loc = get_field('location', $id)):
     ?>
         {
             link: '<?php echo get_the_permalink($id);?>',
